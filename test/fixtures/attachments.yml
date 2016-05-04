@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  file_id: MyString
+  song_id: 
+
+two:
+  kind: MyString
+  file_id: MyString
+  song_id: 
