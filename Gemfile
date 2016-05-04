@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'aws-sdk-rails'
 gem 'figaro'
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem "refile-s3"
