@@ -1,29 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
-
-<p>
+<div class="row text-center">
+  <h2><%= @song.name %></h2>
+</div>
+<div class="row text-center">
+  <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
+</div>
+<p class="text-center">
   <strong>Key:</strong>
   <%= @song.key %>
 </p>
-
-<p>
-  <strong>Lyrics:</strong>
-  <%= @song.lyrics %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @song.note %>
-</p>
-
-<p>
-  <strong>Band:</strong>
-  <%= @song.band %>
-</p>
-
-<%= link_to 'Edit', edit_band_song_path(id: @song.id) %> |
-<%= link_to 'Back', band_songs_path %>
+<div class="row">
+  <div class="small-12 medium-6 large-6 columns text-center">
+    <strong>Lyrics:</strong>
+    <%= @song.lyrics %>
+  </div>
+  <div class="small-12 medium-6 large-6 columns text-center">
+    <strong>Note:</strong>
+    <%= @song.note %>
+  </div>
+</div>
+<div class="row text-center">
+  <%= link_to 'Edit', edit_band_song_path(id: @song.id) %> |
+  <%= link_to 'Back', band_songs_path %>
+</div>
