@@ -12,6 +12,19 @@
  *
  *= require_tree .
  *= require_self
-//= require foundation_and_overrides
-
+ //= require foundation_and_overrides
+ // @include foundation-grid;
+ // @include foundation-flex-grid;
  */
+
+@import 'foundation-icons';
+
+// body {margin-top: 2rem;}
+
+$menu-background: #333;
+
+.title-bar {
+ background: $menu-background;
+ padding: 0.9rem;
+ max-width: 75rem;
+}

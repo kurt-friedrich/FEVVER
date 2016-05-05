@@ -11,6 +11,7 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+    @song.attachments.build
   end
 
   def create
@@ -18,7 +19,7 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
+        format.html { redirect_to band_songs_path, notice: 'Song was successfully created.' }
         format.json { render :show, status: :created, location: @song }
       else
         format.html { render :new }
@@ -45,7 +46,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
+      format.html { redirect_to band_songs_url, notice: 'Song was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -56,10 +57,10 @@ class SongsController < ApplicationController
     end
 
     def set_band
-      @band = Band.find(params[:id])
+      @band = Band.find(params[:band_id])
     end
 
     def song_params
-      params.require(:song).permit(:name, :key, :lyrics, :note, :band_id)
+      params.require(:song).permit(:name, :key, :lyrics, :note, :band_id, attachments_attributes: [:file])
     end
 end

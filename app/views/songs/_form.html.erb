@@ -1,15 +1,18 @@
-<%= simple_form_for(@song) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @song, url: band_songs_path do |s| %>
+  <%= s.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :key %>
-    <%= f.input :lyrics %>
-    <%= f.input :note %>
-    <%= f.association :band %>
+    <%= s.simple_fields_for :attachments do |a| %>
+      <%= a.attachment_field :file %>
+    <% end %>
+    <%= s.input :name %>
+    <%= s.input :key %>
+    <%= s.input :lyrics %>
+    <%= s.input :note %>
+    <%= s.association :band %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= s.button :submit %>
   </div>
 <% end %>

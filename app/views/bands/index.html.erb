@@ -1,29 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Bands</h1>
+<% @bands.each do |band| %>
+  <div class="row band-index">
+    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.upcase, band_path(band) %></div>
+  </div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Owner</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bands.each do |band| %>
-      <tr>
-        <td><%= band.name %></td>
-        <td><%= band.owner_id %></td>
-        <td><%= link_to 'Show', band %></td>
-        <td><%= link_to 'Edit', edit_band_path(band) %></td>
-        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Band', new_band_path %>
+<div class="row text-center">
+  <%= link_to 'New Band', new_band_path %>
+</div>
