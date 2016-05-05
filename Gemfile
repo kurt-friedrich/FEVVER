@@ -30,9 +30,9 @@ gem 'aws-sdk-rails'
 gem 'figaro'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
-gem "refile", require: "refile/rails"
-gem "refile-mini_magick"
-gem "refile-s3"
+gem 'refile', require: ['refile/rails']
+gem 'refile-mini_magick'
+gem 'refile-s3'
 gem 'simple_form'
 
 # Use Unicorn as the app server

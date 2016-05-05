@@ -1,4 +1,4 @@
-require "refile/s3"
+require 'refile/s3'
 
 aws = {
   access_key_id: ENV['AWS-ACCESS-KEY'],

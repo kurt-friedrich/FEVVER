@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <% @bands.each do |band| %>
-  <div class="row band-index align-middle">
-    <div class="small-12 medium-12 large-12 columns text-center"><%= link_to band.name.upcase, band_path(band) %></div>
+  <div class="row band-index">
+    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.upcase, band_path(band) %></div>
   </div>
 <% end %>
 
-<%= link_to 'New Band', new_band_path %>
+<div class="row text-center">
+  <%= link_to 'New Band', new_band_path %>
+</div>
