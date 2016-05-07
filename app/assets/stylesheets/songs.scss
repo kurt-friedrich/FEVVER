@@ -1,3 +1,15 @@
 // Place all the styles related to the Songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.song-index {
+  background-color: #333;
+  padding: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  a{
+    color: #00ff99;
+    font-size: 24px;
+  }
+}

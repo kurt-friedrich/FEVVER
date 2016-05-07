@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <h3>bands</h3>
+  <h3 class="page-title">bands</h3>
 </div>
 
 <% @bands.each do |band| %>
@@ -9,5 +9,5 @@
 <% end %>
 
 <div class="row text-center">
-  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_band_path, id: "new-band" %>
+  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_band_path, class: "create-new-item" %>
 </div>

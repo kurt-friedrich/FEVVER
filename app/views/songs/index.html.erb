@@ -1,35 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<div class="row text-center">
-  <h1><%=@band.name.downcase %> | songs</h1>
+<div class="row">
+  <div class="large-2 medium-2 small-2 columns">
+    <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, bands_path, class: "back-button" %>
+  </div>
+  <div class="large-8 medium-8 small-8 columns end text-center">
+    <h3 class="page-title"><%=@band.name.downcase %></h3>
+  </div>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Key</th>
-      <th>Lyrics</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.name %></td>
-        <td><%= song.key %></td>
-        <td><%= song.lyrics %></td>
-        <td><%= song.note %></td>
-        <td><%= link_to 'Show', band_song_path(id: song.id) %></td>
-        <td><%= link_to 'Edit', edit_band_song_path(id: song.id) %></td>
-        <td><%= link_to 'Destroy', band_song_path(id: song.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @songs.each do |song| %>
+  <div class="row song-index">
+    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to song.name.downcase, band_song_path(id: song.id) %></div>
+  </div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Song', new_band_song_path %>
+<div class="row text-center">
+  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_band_song_path, class: "create-new-item" %>
+</div>
