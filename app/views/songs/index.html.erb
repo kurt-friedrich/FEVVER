@@ -7,11 +7,18 @@
   </div>
 </div>
 
-<% @songs.each do |song| %>
-  <div class="row song-index">
-    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to song.name.downcase, band_song_path(id: song.id) %></div>
-  </div>
+<% if @songs.count != 0 %>
+  <% @songs.each do |song| %>
+    <div class="row song-index">
+      <div class="small-12 medium-12 large-12 columns text-center align-middle">
+        <%= link_to song.name.downcase, band_song_path(id: song.id) %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p class="text-center">there are no songs for this band. add one by clicking '+' below!</p>
 <% end %>
+
 
 <br>
 

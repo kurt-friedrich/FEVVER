@@ -19,7 +19,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+    @song = @band.songs.new(song_params)
 
     respond_to do |format|
       if @song.save
