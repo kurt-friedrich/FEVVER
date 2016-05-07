@@ -1,9 +1,13 @@
+<div class="row text-center">
+  <h3>bands</h3>
+</div>
+
 <% @bands.each do |band| %>
   <div class="row band-index">
-    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.upcase, band_songs_path(band) %></div>
+    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.downcase, band_songs_path(band) %></div>
   </div>
 <% end %>
 
 <div class="row text-center">
-  <%= link_to 'New Band', new_band_path %>
+  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_band_path, id: "new-band" %>
 </div>

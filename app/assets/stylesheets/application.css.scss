@@ -29,9 +29,18 @@ $menu-background: #000;
 }
 
 .title-bar {
- background: $menu-background;
- padding: 0.9rem;
- max-width: 75rem;
+  background: $menu-background;
+  padding: 0.9rem;
+  max-width: 75rem;
+
+  .title-bar-title {
+    font-size: 14px;
+  }
+}
+
+.form-title {
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
 // body {
