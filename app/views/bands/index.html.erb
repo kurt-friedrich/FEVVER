@@ -2,7 +2,7 @@
 
 <% @bands.each do |band| %>
   <div class="row band-index">
-    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.upcase, band_path(band) %></div>
+    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.upcase, band_songs_path(band) %></div>
   </div>
 <% end %>
 
