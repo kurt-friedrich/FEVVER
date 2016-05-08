@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :set_band
 
   def index
-    @songs = @band.songs
+    @songs = @band.songs.order("created_at DESC")
   end
 
   def show

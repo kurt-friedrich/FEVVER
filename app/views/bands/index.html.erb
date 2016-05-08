@@ -4,7 +4,7 @@
 
 <% @bands.each do |band| %>
   <div class="row band-row">
-    <div class="small-8 small-push-2 columns text-center band-column"><%= link_to band.name.downcase, band_songs_path(band) %></div>
+    <div class="small-10 small-push-1 text-center band-column"><%= link_to band.name.downcase, band_songs_path(band) %></div>
   </div>
 <% end %>
 

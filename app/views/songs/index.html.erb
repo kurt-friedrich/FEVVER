@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="small-1 small-push-2 columns">
+  <div class="small-1 columns">
     <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, bands_path, class: "back-button" %>
   </div>
-  <div class="small-6 small-push-2 columns end text-center">
+  <div class="small-10 columns end text-center">
     <h3 class="page-title" id="band-name"><%=@band.name.downcase %></h3>
   </div>
 </div>
@@ -10,7 +10,7 @@
 <% if @songs.count != 0 %>
   <% @songs.each do |song| %>
     <div class="row song-row">
-      <div class="small-8 small-push-2 columns text-center song-column">
+      <div class="small-10 small-push-1 text-center song-column">
         <%= link_to song.name.downcase, band_song_path(id: song.id) %>
       </div>
     </div>
