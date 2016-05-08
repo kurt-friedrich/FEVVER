@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :set_band
 
   def index
-    @songs = @band.songs
+    @songs = @band.songs.order("created_at DESC")
   end
 
   def show
@@ -19,7 +19,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+    @song = @band.songs.new(song_params)
 
     respond_to do |format|
       if @song.save

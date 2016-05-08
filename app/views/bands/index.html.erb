@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="row text-center">
+  <h3 class="page-title">BANDS</h3>
+</div>
 
 <% @bands.each do |band| %>
-  <div class="row band-index">
-    <div class="small-12 medium-12 large-12 columns text-center align-middle"><%= link_to band.name.upcase, band_songs_path(band) %></div>
+  <div class="row band-row">
+    <div class="small-10 small-push-1 text-center band-column"><%= link_to band.name.upcase, band_songs_path(band) %></div>
   </div>
 <% end %>
 
 <div class="row text-center">
-  <%= link_to 'New Band', new_band_path %>
+  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_band_path, class: "create-new-item" %>
 </div>

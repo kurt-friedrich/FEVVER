@@ -15,11 +15,12 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
+    @band.users << @user
 
     respond_to do |format|
       if @band.save
-        format.html { redirect_to @band, notice: 'Band was successfully created.' }
-        format.json { render :show, status: :created, location: @band }
+        format.html { redirect_to bands_path, notice: 'Band was successfully created.' }
+        format.json { render :show, rastatus: :created, location: @band }
       else
         format.html { render :new }
         format.json { render json: @band.errors, status: :unprocessable_entity }
@@ -60,6 +61,6 @@ class BandsController < ApplicationController
     end
 
     def band_params
-      params.require(:band).permit(:name, :owner_id)
+      params.require(:band).permit(:name)
     end
 end
