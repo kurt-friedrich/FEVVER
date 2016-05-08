@@ -1,10 +1,10 @@
 <div class="row text-center">
-  <h3 class="page-title">bands</h3>
+  <h3 class="page-title">BANDS</h3>
 </div>
 
 <% @bands.each do |band| %>
   <div class="row band-row">
-    <div class="small-10 small-push-1 text-center band-column"><%= link_to band.name.downcase, band_songs_path(band) %></div>
+    <div class="small-10 small-push-1 text-center band-column"><%= link_to band.name.upcase, band_songs_path(band) %></div>
   </div>
 <% end %>
 
