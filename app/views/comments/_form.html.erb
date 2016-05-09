@@ -1,0 +1,11 @@
+<%= simple_form_for @comment, url: band_song_comments_path do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :body, label: 'comment' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'create' %>
+  </div>
+<% end %>

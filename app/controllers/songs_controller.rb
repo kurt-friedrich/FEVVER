@@ -7,6 +7,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    @comments = @song.comments
     respond_to do |format|
       format.html {}
       format.js {}
@@ -38,7 +39,7 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to band_song, notice: 'Song was successfully updated.' }
+        format.html { redirect_to band_song_path, notice: 'Song was successfully updated.' }
         format.json { render :show, status: :ok, location: @song }
       else
         format.html { render :edit }
@@ -56,15 +57,16 @@ class SongsController < ApplicationController
   end
 
   private
-    def set_song
-      @song = Song.find(params[:id])
-    end
 
-    def set_band
-      @band = Band.find(params[:band_id])
-    end
+  def set_song
+    @song = Song.find(params[:id])
+  end
 
-    def song_params
-      params.require(:song).permit(:name, :key, :lyrics, :note, :band_id, attachments_attributes: [:file])
-    end
+  def set_band
+    @band = Band.find(params[:band_id])
+  end
+
+  def song_params
+    params.require(:song).permit(:name, :key, :lyrics, :note, :band_id, attachments_attributes: [:file])
+  end
 end
