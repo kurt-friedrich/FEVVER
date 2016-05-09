@@ -7,6 +7,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    @comments = @song.comments
     respond_to do |format|
       format.html {}
       format.js {}
@@ -56,15 +57,16 @@ class SongsController < ApplicationController
   end
 
   private
-    def set_song
-      @song = Song.find(params[:id])
-    end
 
-    def set_band
-      @band = Band.find(params[:band_id])
-    end
+  def set_song
+    @song = Song.find(params[:id])
+  end
 
-    def song_params
-      params.require(:song).permit(:name, :key, :lyrics, :note, :band_id, attachments_attributes: [:file])
-    end
+  def set_band
+    @band = Band.find(params[:band_id])
+  end
+
+  def song_params
+    params.require(:song).permit(:name, :key, :lyrics, :note, :band_id, attachments_attributes: [:file])
+  end
 end

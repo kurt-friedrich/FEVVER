@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: #00ff99;
+
 #band-name {
   background-color: #00ff99;
+}
+
+#comment-button {
+  margin-top: 1em;
+  color: #333;
 }
 
 #song-name {
@@ -12,6 +19,11 @@
 
 #audio-playback {
   margin-bottom: 2em;
+}
+
+#song-lyrics-header, #song-notes-header, #song-comments-header {
+  background-color: $primary-color;
+  font-size: 16px;
 }
 
 .song-row {
@@ -32,4 +44,8 @@
       color: #fff;
     }
   }
+}
+
+.song-comment {
+  margin-top: 1em;
 }
