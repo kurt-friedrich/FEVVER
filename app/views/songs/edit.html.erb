@@ -1,6 +1,28 @@
-<h1>Editing Song</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <p class="form-title">EDIT SONG</p>
+  </div>
+</div>
+<div class="row" id="new-band-form">
+  <div class="large-4 medium-5 small-12 columns">
+    <%= simple_form_for @song, url: band_song_path do |s| %>
+      <%= s.error_notification %>
 
-<%= render 'form' %>
+      <div class="form-inputs">
+        <%= s.input :name, label: 'name' %>
+        <%= s.input :key, label: 'key' %>
+        <%= s.input :lyrics, label: 'lyrics' %>
+        <%= s.input :note, label: 'notes' %>
+      </div>
 
-<%= link_to 'Show', band_song_path(id: @song.id) %> |
-<%= link_to 'Back', band_songs_path %>
+      <div class="form-actions">
+        <%= s.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'cancel', band_song_path %>
+  </div>
+</div>

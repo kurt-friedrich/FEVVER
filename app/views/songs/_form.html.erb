@@ -5,13 +5,13 @@
     <%= s.simple_fields_for :attachments do |a| %>
       <%= a.attachment_field :file %>
     <% end %>
-    <%= s.input :name %>
-    <%= s.input :key %>
-    <%= s.input :lyrics %>
-    <%= s.input :note %>
+    <%= s.input :name, label: 'name' %>
+    <%= s.input :key, label: 'key' %>
+    <%= s.input :lyrics, label: 'lyrics' %>
+    <%= s.input :note, label: 'notes' %>
   </div>
 
   <div class="form-actions">
-    <%= s.button :submit %>
+    <%= s.button :submit, 'create' %>
   </div>
 <% end %>
