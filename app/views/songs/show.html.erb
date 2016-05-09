@@ -17,23 +17,31 @@
 </div>
 <div class="row">
   <div class="small-12 medium-5 medium-push-1 columns text-center">
-    <strong id="song-lyrics-header">LYRICS</strong>
-    <%= simple_format(@song.lyrics.downcase) %>
+    <div id="song-lyrics">
+      <p id="song-lyrics-header">LYRICS</p>
+      <div class="song-content">
+        <%= simple_format(@song.lyrics.downcase) %>
+      </div>
+    </div>
   </div>
-  <div class="small-12 medium-5 medium-push-1 columns end text-center" id="song-notes">
-    <strong id="song-notes-header">NOTES</strong>
-    <%= simple_format(@song.note) %>
+  <div class="small-12 medium-5 medium-push-1 columns end">
+    <div id="song-notes">
+      <p class="text-center" id="song-notes-header">NOTES</p>
+      <div class="song-content">
+        <%= simple_format(@song.note) %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="small-12 medium-10 medium-push-1 columns text-center">
     <%= link_to "comment", new_band_song_comment_path(song_id: @song.id), class: "button", id: "comment-button" %>
   </div>
-  <% @comments.each do |comment| %>
-    <div class="row">
-      <div class="small-6 small-push-3 end columns song-comment">
-        <strong>@<%= comment.user.username %>:</strong> <%= comment.body %>
-      </div>
-    </div>
-  <% end %>
+</div>
+<div class="row">
+  <div class="small-12 large-6 large-push-3 end columns" id="comments-section">
+    <% @comments.each do |comment| %>
+      <p class="song-comment"><strong>@<%= comment.user.username %>:</strong> <%= comment.body %></p>
+    <% end %>
+  </div>
 </div>

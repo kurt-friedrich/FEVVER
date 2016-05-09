@@ -13,6 +13,14 @@ $primary-color: #00ff99;
   color: #333;
 }
 
+#comments-section {
+}
+
+.song-content {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
 #song-name {
   background-color: #00ff99;
 }
@@ -21,9 +29,14 @@ $primary-color: #00ff99;
   margin-bottom: 2em;
 }
 
+#song-lyrics, #song-notes {
+  border: 1px solid #ccc;
+}
+
 #song-lyrics-header, #song-notes-header, #song-comments-header {
   background-color: $primary-color;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .song-row {
@@ -47,5 +60,7 @@ $primary-color: #00ff99;
 }
 
 .song-comment {
-  margin-top: 1em;
+  margin: 0;
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
 }
