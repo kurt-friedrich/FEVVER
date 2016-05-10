@@ -1,6 +1,26 @@
-<h1>Editing Band</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <p class="form-title">EDIT BAND</p>
+  </div>
+</div>
+<div class="row" id="new-band-form">
+  <div class="large-4 medium-5 small-12 columns">
+    <%= simple_form_for(@band) do |f| %>
+      <%= f.error_notification %>
 
-<%= render 'form' %>
+      <div class="form-inputs">
+        <%= f.input :name, label: 'name' %>
+      </div>
 
-<%= link_to 'Show', @band %> |
-<%= link_to 'Back', bands_path %>
+      <div class="form-actions">
+        <%= f.button :submit, 'update' %>
+      </div>
+    <% end %>
+    <%= render 'members' %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'cancel', bands_path %>
+  </div>
+</div>
