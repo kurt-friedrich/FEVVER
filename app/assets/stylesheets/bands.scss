@@ -27,7 +27,11 @@
   display: inline-block;
 }
 
-#edit-band-icon {
+.delete-band-icon {
+  float: left;
+}
+
+.edit-band-icon {
   float: right;
 }
 
