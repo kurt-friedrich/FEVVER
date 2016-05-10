@@ -1,6 +1,15 @@
-<h1>Editing User</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="small-12 columns">
+    <p class="form-title">EDIT USER</p>
+  </div>
+</div>
+<div class="row" id="new-band-form">
+  <div class="large-4 medium-5 small-12 columns">
+    <%= render 'form' %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'cancel', user_path %>
+  </div>
+</div>

@@ -1,7 +1,11 @@
-<div class="large-4 medium-4 columns" id="login-form">
-  <%= simple_form_for :session, url: login_create_path, html: { class: 'form-horizontal' } do |f| %>
+<%= simple_form_for :session, url: login_create_path, html: { class: 'form-horizontal' } do |f| %>
+
+  <div class="form-inputs">
     <%= f.input :email, autofocus: true %>
     <%= f.input :password %>
-    <%= f.button :submit, "Submit" %>
-  <% end %>
-</div>
+  </div>
+
+  <div class="form-actions submit-button">
+    <%= f.button :submit, "submit" %>
+  </div>
+<% end %>

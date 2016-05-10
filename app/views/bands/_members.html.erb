@@ -6,7 +6,7 @@
 <% @band.users.each do |user| %>
   <div class="row band-member">
     <div class="small-1 columns">
-      <%= link_to '<i class="fi-trash"></i>'.html_safe, new_band_path, class: "band-member-delete" %>
+      <%= link_to '<i class="fi-x"></i>'.html_safe, new_band_path, class: "band-member-delete" %>
     </div>
     <div class="small-11 columns">
       <p class="band-member-email"><%= user.email %></p>
