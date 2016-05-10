@@ -4,7 +4,13 @@
 
 <% @bands.each do |band| %>
   <div class="row band-row">
-    <div class="small-10 small-push-1 text-center band-column"><%= link_to band.name.upcase, band_songs_path(band) %></div>
+    <div class="small-10 small-push-1 columns text-center band-column">
+      <%= link_to band.name.upcase, band_songs_path(band) %>
+      <%= link_to '<i class="fi-page-edit"></i>'.html_safe, edit_band_path(band), id: "edit-band-icon" %>
+    </div>
+    <div class="small-1 columns text-center">
+
+    </div>
   </div>
 <% end %>
 
