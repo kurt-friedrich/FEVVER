@@ -3,7 +3,11 @@ class BandsController < ApplicationController
   before_action :set_user
 
   def index
-    @bands = @user.bands
+    if current_user
+      @bands = @user.bands
+    else
+      render 'application/welcome'
+    end
   end
 
   def show
