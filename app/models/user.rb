@@ -5,14 +5,14 @@ class User < ActiveRecord::Base
 
   before_validation :downcase_email
   validates :email, :username, presence: true
-  validates :email, uniqueness: true
+  # validates :email, uniqueness: true
   validates :password, length: {
     minimum: 8,
     too_short: "password must be between 8 and 25 characters",
     maximum: 25,
     too_long: "password must be between 8 and 25 characters"
   }
-  validate :email_is_valid_format
+  # validate :email_is_valid_format
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
