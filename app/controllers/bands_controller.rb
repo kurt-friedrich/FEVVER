@@ -19,10 +19,10 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-    @band.users << @user
 
     respond_to do |format|
       if @band.save
+        @band.users << @user
         format.html { redirect_to bands_path, notice: 'Band was successfully created.' }
         format.json { render :show, rastatus: :created, location: @band }
       else
@@ -42,7 +42,6 @@ class BandsController < ApplicationController
         format.json { render :show, status: :ok, location: @band }
       else
         format.html { render :edit }
-        format.json { render json: @band.errors, status: :unprocessable_entity }
       end
     end
   end
