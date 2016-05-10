@@ -26,16 +26,25 @@ $menu-background: #000;
 $primary-color: #00ff99;
 
 * {
-  font-family: 'Roboto', sans-serif;  
+  font-family: 'Roboto', sans-serif;
 }
 
 .title-bar {
   background: $menu-background;
-  padding: 0.9rem;
+  margin: auto;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
   max-width: 75rem;
 
   .title-bar-title {
+    padding: 0.7rem 0rem 0.7rem 1rem;
+    vertical-align: middle;
     font-size: 14px;
+    color: #fff;
+  }
+
+  .title-bar-title:hover {
+    color: $primary-color;
   }
 }
 
