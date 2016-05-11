@@ -1,4 +1,5 @@
 class InvitesController < ApplicationController
+  before_action :set_band
 
   def new
     @invite = Invite.new
@@ -18,6 +19,7 @@ class InvitesController < ApplicationController
       else
         InviteMailer.new_user_invite(@invite, signup_path(:invite_token => @invite.token)).deliver
       end
+      redirect_to edit_band_path(id: @band.id)
     else
       render :new
     end
@@ -34,6 +36,6 @@ class InvitesController < ApplicationController
   end
 
   def invite_params
-    params.require(:invite).permit(:name)
+    params.require(:invite).permit(:email, :band_id)
   end
 end
