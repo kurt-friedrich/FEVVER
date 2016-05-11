@@ -5,7 +5,18 @@
 </div>
 <div class="row" id="new-band-form">
   <div class="large-4 medium-5 small-12 columns">
-    <%= render 'form' %>
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email %>
+        <%= f.input :username %>
+      </div>
+
+      <div class="form-actions submit-button">
+        <%= f.button :submit, 'submit' %>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="row">
