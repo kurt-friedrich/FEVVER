@@ -19,6 +19,7 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
+    @band.owner = @user
 
     respond_to do |format|
       if @band.save

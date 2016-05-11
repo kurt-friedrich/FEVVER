@@ -9,12 +9,16 @@
   </div>
 </div>
 <p class="text-center">
-  <strong>key of <%= @song.key %></strong> //
-  <%= link_to 'Edit', edit_band_song_path(id: @song.id) %>
+  <strong>key of <%= @song.key %></strong>
+  <% if current_user == @band.owner %>
+  // <%= link_to 'Edit', edit_band_song_path(id: @song.id) %>
+  <% end %>
 </p>
-<div class="row text-center" id="audio-playback">
-  <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
-</div>
+<% unless @song.attachments.count == 0 %>
+  <div class="row text-center" id="audio-playback">
+    <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
+  </div>
+<% end %>
 <div class="row">
   <div class="small-12 medium-5 medium-push-1 columns text-center">
     <div id="song-lyrics">

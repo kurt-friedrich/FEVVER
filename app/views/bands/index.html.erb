@@ -6,7 +6,9 @@
   <% @bands.each do |band| %>
     <div class="row band-row">
       <div class="small-10 small-push-1 columns text-center band-column">
-        <%= link_to '<i class="fi-trash"></i>'.html_safe, band_path(band), method: :delete, class: "delete-band-icon" %>
+        <% if current_user == band.owner %>
+          <%= link_to '<i class="fi-trash"></i>'.html_safe, band_path(band), method: :delete, class: "delete-icon" %>
+        <% end %>
         <%= link_to band.name.upcase, band_songs_path(band) %>
         <%= link_to '<i class="fi-page-edit"></i>'.html_safe, edit_band_path(band), class: "edit-band-icon" %>
       </div>
