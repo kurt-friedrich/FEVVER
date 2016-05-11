@@ -56,15 +56,16 @@ class BandsController < ApplicationController
   end
 
   private
-    def set_band
-      @band = Band.find(params[:id])
-    end
 
-    def set_user
-      @user = current_user
-    end
+  def set_band
+    @band = Band.find(params[:id])
+  end
 
-    def band_params
-      params.require(:band).permit(:name)
-    end
+  def set_user
+    @user = current_user
+  end
+
+  def band_params
+    params.require(:band).permit(:name)
+  end
 end
