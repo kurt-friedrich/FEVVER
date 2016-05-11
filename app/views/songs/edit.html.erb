@@ -16,13 +16,15 @@
       </div>
 
       <div class="form-actions">
-        <%= s.button :submit %>
+        <%= s.button :submit, 'submit changes' %>
+        <%= link_to 'cancel', band_song_path, id:'edit-song-cancel' %>
       </div>
     <% end %>
   </div>
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <%= link_to 'cancel', band_song_path %>
+    <p>OR</p>
+    <%= link_to 'delete song', band_song_path, method: :delete, class: 'button alert right'%>
   </div>
 </div>
