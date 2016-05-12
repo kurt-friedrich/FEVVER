@@ -21,6 +21,7 @@
 </div>
 <div class="row">
   <div class="small-12 columns">
+    <%= link_to 'invite members', new_band_invite_path(band_id: @band.id) %>
     <%= link_to 'cancel', bands_path %>
   </div>
 </div>

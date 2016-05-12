@@ -10,16 +10,24 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @token = params[:invite_token] #<-- pulls the value from the url query string
   end
 
   def create
-    @user = User.new(user_params)
+    @user = build_user(user_params)
+    @user.save
+    @token = params[:invite_token]
 
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to root_path, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        if @token != nil
+          org = Invite.find_by_token(@token).band #find the user group attached to the invite
+          @user.bands.push(org) #add this user to the new user group as a member
+        else
+          format.html { redirect_to root_path, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        end
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -56,6 +64,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :username, :password, :password_confirmation)
+      params.require(:user).permit(:email, :username, :password, :password_confirmation, :invite_token)
     end
 end
