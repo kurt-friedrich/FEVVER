@@ -4,6 +4,22 @@
 
 $primary-color: #00ff99;
 
+// HEADER
+.section-header, {
+  overflow: hidden;
+  background-color: $primary-color;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+// AUDIO PLAYER
+
+
+// LYRICS + NOTES
+
+
+// COMMENTS
+
 .song-comment {
   padding: .5em;
   border-bottom: 1px solid $primary-color;
@@ -60,15 +76,6 @@ $primary-color: #00ff99;
   border-radius: 10px;
   margin-left: 0.5em;
   margin-right: 0.5em;
-}
-
-#song-comments-header
-#song-lyrics-header,
-#song-notes-header, {
-  overflow: hidden;
-  background-color: $primary-color;
-  font-size: 16px;
-  font-weight: bold;
 }
 
 #song-name {

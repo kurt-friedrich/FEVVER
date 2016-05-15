@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  //= require foundation_and_overrides
  // @include foundation-grid;
  // @include foundation-flex-grid;
@@ -24,6 +24,7 @@
 
 $menu-background: #000;
 $primary-color: #00ff99;
+$light-grey: #ccc;
 
 * {
   font-family: 'Roboto', sans-serif;
@@ -32,6 +33,8 @@ $primary-color: #00ff99;
 body {
   background-color: #262626;
 }
+
+#notice { color: $light-grey }
 
 .title-bar {
   background: $menu-background;
@@ -62,7 +65,11 @@ body {
   font-weight: bold;
 }
 
-.back-button {
+.header-left-icon {
+  font-size: 3em;
+}
+
+.header-right-icon {
   font-size: 3em;
 }
 

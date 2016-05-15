@@ -1,22 +1,26 @@
-<!-- ERROR NOTICE -->
+<!-- NOTICES -->
 <div class="row" id="notice">
-  <%= notice %>
 </div>
 
 <!-- SONG HEADER + INFO -->
-<div class="row text-center" id="song-header">
+<div class="row text-center">
   <div class="small-1 columns">
-    <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, band_songs_path, class: "back-button" %>
+    <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, band_songs_path, class: "header-left-icon" %>
   </div>
-  <div class="small-10 columns end text-center">
+
+  <div class="small-10 columns text-center">
     <h3 class="page-title" id="song-name"><%= @song.name.downcase %></h3>
   </div>
+
+  <div class="small-1 columns end">
+    <% if user_is_owner? %>
+      <%= link_to '<i class="fi-page-edit"></i>'.html_safe, edit_band_song_path, class: "header-right-icon" %>
+    <% end %>
+  </div>
 </div>
-<div class="row text-center" id="song-key-edit">
+
+<div class="row text-center">
   <strong>key of <%= @song.key %></strong>
-  <% if current_user == @band.owner %>
-  // <%= link_to 'Edit', edit_band_song_path(id: @song.id) %>
-  <% end %>
 </div>
 
 <!-- AUDIO PLAYER-->
@@ -42,10 +46,11 @@
   </div>
 </div>
 
-<!-- COMMENTS SECTION -->
+<!-- COMMENTS -->
 <div class="row" id="song-comment-form">
   <%= render 'comments/form' %>
 </div>
+
 <div class="row">
   <div class="small-12 medium-10 medium-push-1 end columns" id="comments-section">
     <% @comments.each do |comment| %>
