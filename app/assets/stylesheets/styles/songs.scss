@@ -1,9 +1,3 @@
-// Place all the styles related to the Songs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-$primary-color: #00ff99;
-
 // HEADER
 .section-header, {
   overflow: hidden;
@@ -40,11 +34,11 @@ $primary-color: #00ff99;
     padding: 1em;
 
     a {
-      color: #000;
+      color: $black;
       font-size: 24px;
     }
 
-    a:hover { color: #fff; }
+    a:hover { color: $white; }
   }
 }
 
@@ -57,12 +51,12 @@ $primary-color: #00ff99;
 
 #comment-button {
   margin-top: 1em;
-  color: #333;
+  color: $text-dark;
 }
 #comment-form-submit {
   padding-left: 0;
 
-  input { color: #333; }
+  input { color: $text-dark; }
 }
 
 #edit-song-cancel { margin-left: 1em; }
@@ -72,7 +66,7 @@ $primary-color: #00ff99;
 #song-lyrics,
 #song-notes {
   height: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid $light-grey;
   border-radius: 10px;
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -80,5 +74,5 @@ $primary-color: #00ff99;
 
 #song-name {
   background-color: $primary-color;
-  color: #333;
+  color: $text-dark;
 }

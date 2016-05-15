@@ -1,0 +1,59 @@
+$primary-color: #00ff99;
+$light-grey: #ccc;
+$dark-grey: #262626;
+$text-dark: #333;
+
+body {
+  background-color: $dark-grey;
+}
+
+#notice { color: $light-grey }
+
+.title-bar {
+  background: $black;
+  margin: auto;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  max-width: 75rem;
+
+  .title-bar-title {
+    padding: 0.7rem 0rem 0.7rem 1rem;
+    vertical-align: middle;
+    font-size: 14px;
+    color: $white;
+  }
+
+  .title-bar-title:hover {
+    color: $primary-color;
+  }
+}
+
+.form-title {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.page-title {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.header-left-icon {
+  font-size: 3em;
+}
+
+.header-right-icon {
+  font-size: 3em;
+}
+
+.create-new-item {
+  font-size: 3em;
+}
+
+.submit-button input {
+  color: $text-dark;
+}
+
+.submit-button input:hover {
+  color: $text-dark;
+}

@@ -9,10 +9,10 @@
   .band-column {
     height: 100%;
     padding: 2em;
-    background-color: #333;
+    background-color: $dark-grey;
 
     a{
-      color: #00ff99;
+      color: $primary-color;
       font-size: 24px;
     }
   }
