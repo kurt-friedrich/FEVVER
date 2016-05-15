@@ -1,0 +1,27 @@
+.title-bar {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  margin: auto;
+  background: $black;
+}
+
+.title-bar-title {
+  vertical-align: middle;
+  padding: 0.7rem 0rem 0.7rem 1rem;
+  color: $white;
+  font-size: 14px;
+}
+
+.title-bar-title:hover { color: $primary-color; }
+
+.navbar-link a {
+  padding: 0;
+  color: $white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navbar-link a:hover {
+  background-color: $primary-color;
+  color: $text-dark;
+}

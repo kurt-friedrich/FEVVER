@@ -1,14 +1,10 @@
-.navbar-link a {
-  padding: 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: $white;
-}
-
-.navbar-link a:hover {
+.header-title {
+  display: inline-block;
   background-color: $primary-color;
   color: $text-dark;
+  font-weight: bold;
 }
 
-.title-bar-left-content {
+.header-icon {
+  font-size: $icon-large;
 }

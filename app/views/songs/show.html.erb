@@ -1,23 +1,14 @@
 <!-- NOTICES -->
-<div class="row" id="notice">
-</div>
+<div class="row" id="notice"></div>
 
 <!-- SONG HEADER + INFO -->
-<div class="row text-center">
-  <div class="small-1 columns">
-    <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, band_songs_path, class: "header-left-icon" %>
-  </div>
-
-  <div class="small-10 columns text-center">
-    <h3 class="page-title" id="song-name"><%= @song.name.downcase %></h3>
-  </div>
-
-  <div class="small-1 columns end">
-    <% if user_is_owner? %>
-      <%= link_to '<i class="fi-page-edit"></i>'.html_safe, edit_band_song_path, class: "header-right-icon" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'header',
+    item: @song,
+    icon_left: icon_back,
+    path_left: band_songs_path,
+    icon_right: icon_edit,
+    path_right: edit_band_song_path
+%>
 
 <div class="row text-center">
   <strong>key of <%= @song.key %></strong>
