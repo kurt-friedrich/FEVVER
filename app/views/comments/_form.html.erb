@@ -1,11 +1,10 @@
-<%= simple_form_for @comment, url: band_song_comments_path do |f| %>
+<%= simple_form_for @comment, url: band_song_comments_path(song_id: @song.id) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :body, label: 'comment' %>
+  <div class="small-9 small-push-1 medium-7 medium-push-2 columns" id="comment-form-input">
+    <%= f.input :body, label: false, placeholder: 'leave a comment' %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, 'create' %>
+  <div class="small-1 small-push-1 medium-1 medium-push-2 columns end" id="comment-form-submit">
+    <%= f.button :submit, 'post' %>
   </div>
 <% end %>

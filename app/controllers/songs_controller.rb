@@ -7,6 +7,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @comments = @song.comments
     respond_to do |format|
       format.html {}

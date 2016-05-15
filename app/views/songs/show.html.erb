@@ -1,6 +1,10 @@
-<p id="notice"><%= notice %></p>
+<!-- ERROR NOTICE -->
+<div class="row" id="notice">
+  <%= notice %>
+</div>
 
-<div class="row text-center">
+<!-- SONG HEADER + INFO -->
+<div class="row text-center" id="song-header">
   <div class="small-1 columns">
     <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, band_songs_path, class: "back-button" %>
   </div>
@@ -8,27 +12,27 @@
     <h3 class="page-title" id="song-name"><%= @song.name.downcase %></h3>
   </div>
 </div>
-<p class="text-center">
+<div class="row text-center" id="song-key-edit">
   <strong>key of <%= @song.key %></strong>
   <% if current_user == @band.owner %>
   // <%= link_to 'Edit', edit_band_song_path(id: @song.id) %>
   <% end %>
-</p>
+</div>
+
+<!-- AUDIO PLAYER-->
 <% unless @song.attachments.count == 0 %>
-  <div class="row text-center" id="audio-playback">
-    <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
-  </div>
+  <%= render 'player' %>
 <% end %>
+
+<!-- LYRICS + NOTES -->
 <div class="row">
-  <div class="small-12 medium-5 medium-push-1 columns text-center">
-    <div id="song-lyrics">
-      <p id="song-lyrics-header">LYRICS</p>
-      <div class="song-content">
-        <%= simple_format(@song.lyrics.downcase) %>
-      </div>
+  <div class="small-12 medium-5 medium-push-1 columns text-center" id="song-lyrics">
+    <p id="song-lyrics-header">LYRICS</p>
+    <div class="song-content">
+      <%= simple_format(@song.lyrics.downcase) %>
     </div>
   </div>
-  <div class="small-12 medium-5 medium-push-1 columns end">
+  <div class="small-12 medium-5 medium-push-1 columns end" id="song-notes-col">
     <div id="song-notes">
       <p class="text-center" id="song-notes-header">NOTES</p>
       <div class="song-content">
@@ -37,13 +41,13 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="small-12 medium-10 medium-push-1 columns text-center">
-    <%= link_to "comment", new_band_song_comment_path(song_id: @song.id), class: "button", id: "comment-button" %>
-  </div>
+
+<!-- COMMENTS SECTION -->
+<div class="row" id="song-comment-form">
+  <%= render 'comments/form' %>
 </div>
 <div class="row">
-  <div class="small-12 large-6 large-push-3 end columns" id="comments-section">
+  <div class="small-12 medium-10 medium-push-1 end columns" id="comments-section">
     <% @comments.each do |comment| %>
       <p class="song-comment"><strong>@<%= comment.user.username %>:</strong> <%= comment.body %></p>
     <% end %>
