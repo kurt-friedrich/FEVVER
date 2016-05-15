@@ -6,8 +6,16 @@
   font-weight: bold;
 }
 
-// AUDIO PLAYER
+#song-key {
+  color: $primary-color;
+  font-weight: bold;
+}
 
+// AUDIO PLAYER
+#song-player {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
 
 // LYRICS + NOTES
 
@@ -42,10 +50,7 @@
   }
 }
 
-#song-player {
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
+
 
 #band-name { background-color: $primary-color; }
 

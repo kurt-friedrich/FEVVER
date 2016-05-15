@@ -3,6 +3,7 @@ $primary-color: #00ff99;
 $light-grey: #ccc;
 $dark-grey: #262626;
 // TEXTS
+$text-notice: #ff5050;
 $text-dark: #333;
 // ICONS
 $icon-large: 3em;
@@ -10,16 +11,28 @@ $icon-small: 1em;
 
 body {
   background-color: $light-grey;
+  color: $white;
 }
 
 .body-wrapper {
   max-width: 75rem;
-  min-height: 100vw;
+  height: 100vw;
   margin: auto;
   background-color: $dark-grey;
 }
 
-#notice { color: $light-grey }
+.body-content {
+  position: absolute;
+  width: 100%;
+}
+
+#notice {
+  position: absolute;
+  top: .5em;
+  width: 100%;
+  color: $text-notice;
+  text-align: center;
+}
 
 .form-title {
   margin-top: 1rem;

@@ -1,6 +1,3 @@
-<!-- NOTICES -->
-<div class="row" id="notice"></div>
-
 <!-- SONG HEADER + INFO -->
 <%= render 'header',
     item: @song,
@@ -11,13 +8,11 @@
 %>
 
 <div class="row text-center">
-  <strong>key of <%= @song.key %></strong>
+  key of <span id="song-key"><%= @song.key %></span>
 </div>
 
 <!-- AUDIO PLAYER-->
-<% unless @song.attachments.count == 0 %>
-  <%= render 'player' %>
-<% end %>
+<%= render 'player' %>
 
 <!-- LYRICS + NOTES -->
 <div class="row">

@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+
+  def song_has_attachments?
+    @song.attachments.count > 0
+  end
+
   def user_is_owner?
     current_user == @band.owner
   end
