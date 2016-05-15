@@ -4,6 +4,13 @@ $dark-grey: #262626;
 $text-dark: #333;
 
 body {
+  background-color: $light-grey;
+}
+
+.body-wrapper {
+  max-width: 75rem;
+  min-height: 100vw;
+  margin: auto;
   background-color: $dark-grey;
 }
 
@@ -14,7 +21,6 @@ body {
   margin: auto;
   padding-left: 0.9rem;
   padding-right: 0.9rem;
-  max-width: 75rem;
 
   .title-bar-title {
     padding: 0.7rem 0rem 0.7rem 1rem;
