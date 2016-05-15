@@ -16,20 +16,19 @@ body {
 
 .body-wrapper {
   max-width: 75rem;
-  height: 100vw;
+  padding-bottom: 5em;
   margin: auto;
   background-color: $dark-grey;
 }
 
 .body-content {
-  position: absolute;
   width: 100%;
 }
 
 #notice {
-  position: absolute;
-  top: .5em;
+  height: 2.5em;
   width: 100%;
+  padding: .5em;
   color: $text-notice;
   text-align: center;
 }
