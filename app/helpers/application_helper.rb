@@ -1,5 +1,8 @@
 module ApplicationHelper
 
+  def band_has_songs?
+    @band.songs.count > 0
+  end
 
   def song_has_attachments?
     @song.attachments.count > 0

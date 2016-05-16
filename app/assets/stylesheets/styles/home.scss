@@ -16,6 +16,10 @@ body {
   color: $text-dark;
 }
 
+label {
+  color: $dark-grey;
+}
+
 .body-wrapper {
   max-width: 75rem;
   padding-bottom: 5em;

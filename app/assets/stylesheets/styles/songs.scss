@@ -70,21 +70,18 @@
 }
 
 // INDEX VIEW
-.song-row {
-  margin-top: .5em;
-  margin-bottom: .5em;
+.song-index {
+  padding-top: .5em;
+  padding-bottom: .5em;
 
-  .song-column {
-    height: 100%;
-    padding: 1em;
+  a {
+    color: $black;
+    font-size: 24px;
+  }
 
-    a {
-      color: $black;
-      font-size: 24px;
-    }
-
-    a:hover { color: $white; }
+  a:hover {
+    background-color: $black;
+    box-shadow: $box-shadow;
+    color: $white;
   }
 }
-
-#band-name { background-color: $primary-color; }
