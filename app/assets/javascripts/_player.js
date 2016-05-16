@@ -8,7 +8,8 @@ $(document).ready(function(){
         mpPlay = $('.mp-controls-play', musicPlayer)[0],
         mpRestart = $('.mp-controls-restart', musicPlayer)[0],
         mpReplay = $('.mp-controls-replay', musicPlayer)[0],
-        mpLoop = $('.mp-controls-loop', musicPlayer)[0]
+        mpLoop = $('.mp-controls-loop', musicPlayer)[0],
+        mpTimeline = $('.mp-timeline', musicPlayer)[0]
 
     var waveSurfer = WaveSurfer.create({
         container: mpVisualizer,
@@ -20,6 +21,14 @@ $(document).ready(function(){
     })
 
     waveSurfer.load(mpAudio.src)
+
+    waveSurfer.on('ready', function () {
+      var timeline = Object.create(WaveSurfer.Timeline);
+      timeline.init({
+        wavesurfer: waveSurfer,
+        container: mpTimeline
+      });
+    })
 
     // Playing & Pausing
     mpPlay.addEventListener('click', function(){
@@ -43,32 +52,9 @@ $(document).ready(function(){
       waveSurfer.skipBackward()
     })
 
-    // Visualizer
-    // mpAudio.addEventListener('timeupdate', function(e){
-    //   var mpPlayheadPosition = (mpAudio.currentTime / mpAudio.duration) * 100,
-    //       mpPlayheadPercentWidth = ($(mpPlayhead).width() / $(mpVisualizer).width() * 100)
-    //
-    //   if (mpPlayheadPosition + mpPlayheadPercentWidth < 100) {
-    //     mpPlayhead.style.left = mpPlayheadPosition + '%'
-    //   }
-    // })
-
-    // Playhead Positioning
-    // mpVisualizer.addEventListener('click', function(e){
-    //   var mousePointerX = e.pageX,
-    //       mpVisualizerX = $(this).offset().left,
-    //       mpVisualizerWidth = $(this).width() + $(mpPlayhead).width(),
-    //       mpPlayheadPercent = ((mousePointerX - mpVisualizerX) / mpVisualizerWidth) * 100
-    //
-    //   mpPlayhead.style.left = mpPlayheadPercent + '%'
-    //   mpAudio.currentTime = (mpPlayheadPercent / 100) * mpAudio.duration
-    // })
-    //
-    //
-    //
-    // // Looping
-    // mpLoop.addEventListener('click', function(){
-    //   //mpAudio.
-    // })
+    // Looping
+    mpLoop.addEventListener('click', function(){
+      //mpAudio.
+    })
   })
 })
