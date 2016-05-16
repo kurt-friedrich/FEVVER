@@ -30,13 +30,14 @@
 
 .song-content-body {
   padding: .5em;
-  background-color: $dark-grey;
   box-shadow: $box-shadow;
+  background-color: $dark-grey;
+  color: $white;
 }
 
-// COMMENTS
+// COMMENT FORM
 #new_comment {
-  margin: .5em;
+  padding: .5em;
 }
 
 .comment_body {
@@ -54,6 +55,7 @@
   font-weight: bold;
 }
 
+// COMMENTS
 .song-comment {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -67,6 +69,7 @@
   color: $primary-color;
 }
 
+// INDEX VIEW
 .song-row {
   margin-top: .5em;
   margin-bottom: .5em;
@@ -85,5 +88,3 @@
 }
 
 #band-name { background-color: $primary-color; }
-
-#edit-song-cancel { margin-left: 1em; }

@@ -3,7 +3,7 @@
     <p class="form-title">EDIT SONG</p>
   </div>
 </div>
-<div class="row" id="new-band-form">
+<div class="row">
   <div class="large-4 medium-5 small-12 columns">
     <%= simple_form_for @song, url: band_song_path do |s| %>
       <%= s.error_notification %>
@@ -16,8 +16,8 @@
       </div>
 
       <div class="form-actions">
-        <%= s.button :submit, 'submit changes' %>
-        <%= link_to 'cancel', band_song_path, id:'edit-song-cancel' %>
+        <%= s.button :submit, 'SAVE' %>
+        <%= link_to 'cancel', band_song_path, class:'form-cancel' %>
       </div>
     <% end %>
   </div>
@@ -25,6 +25,6 @@
 <div class="row">
   <div class="small-12 columns">
     <p>OR</p>
-    <%= link_to 'delete song', band_song_path, method: :delete, class: 'button alert right'%>
+    <%= link_to 'DELETE', band_song_path, method: :delete, class: 'button alert right'%>
   </div>
 </div>

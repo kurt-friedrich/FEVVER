@@ -1,4 +1,4 @@
-<!-- SONG HEADER + INFO -->
+<!-- HEADER + INFO -->
 <%= render 'header',
     item: @song,
     icon_left: icon_back,
@@ -35,10 +35,7 @@
   <div class="song-content-box small-12 medium-10 medium-push-1 end columns">
     <div class="song-content-body">
       <%= render 'comments/form' %>
-      <% @comments.each do |comment| %>
-        <p class="song-comment"><span class="comment-username"><%= comment.user.username %></span>:</strong> <%= comment.body %></p>
-      <% end %>
+      <%= render @comments %>
     </div>
   </div>
-
 </div>

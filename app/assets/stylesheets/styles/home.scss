@@ -6,13 +6,14 @@ $box-shadow: 5px 5px 5px #888888;
 // TEXTS
 $text-notice: #ff5050;
 $text-dark: #333;
+
 // ICONS
 $icon-large: 2.5em;
 $icon-small: 1em;
 
 body {
   background-color: $light-grey;
-  color: $white;
+  color: $text-dark;
 }
 
 .body-wrapper {
@@ -23,6 +24,16 @@ body {
 }
 
 .body-content { width: 100%; }
+
+.button,
+.button.alert {
+  color: $text-dark;
+}
+
+.form-cancel {
+  margin-left: 1em;
+  color: $text-dark;
+}
 
 #notice {
   height: 2.5em;
