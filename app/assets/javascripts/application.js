@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require wavesurfer
+//= require wavesurfer-plugins
 //= require_tree .
 $(document).foundation();

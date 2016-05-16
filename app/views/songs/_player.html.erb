@@ -1,5 +1,22 @@
-<% if song_has_attachments? %>
+<div id="player1" class="mp">
+  <!-- <audio class="mp-audio" src="<%= attachment_url(@song.attachments.first, :file) %>"</audio> -->
+  <%= audio_tag attachment_url(@song.attachments.first, :file), class: "mp-audio" %>
+  <!-- <audio class="mp-audio" src="085affc6d878ecf7971332816c24f48818ef3908d6fa1be5610c68de482c.mp3"></audio> -->
+  <section class="mp-visualizer">
+    <div class="mp-visualizer-playhead"></div>
+  </section>
+  <section class="mp-controls">
+    <ul>
+      <li><a class="mp-controls-play" href="#play">PLAY</a></li>
+      <li><a class="mp-controls-restart" href="#restart">RESTART</a></li>
+      <li><a class="mp-controls-replay" href="#replay">REPLAY</a></li>
+      <li><a class="mp-controls-loop" href="#loop">LOOP</a></li>
+    </ul>
+  </section>
+</div>
+
+<!-- <% if song_has_attachments? %>
   <div class="row text-center" id="song-player">
     <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
   </div>
-<% end %>
+<% end %> -->
