@@ -1,23 +1,20 @@
+<!-- HEADER -->
 <div class="row text-center">
   <h3 class="page-title">BANDS</h3>
 </div>
 
-<% if @bands.count != 0 %>
-  <% @bands.each do |band| %>
-    <div class="row band-row">
-      <div class="small-10 small-push-1 columns text-center band-column">
-        <% if current_user == band.owner %>
-          <%= link_to '<i class="fi-trash"></i>'.html_safe, band_path(band), method: :delete, class: "delete-icon" %>
-        <% end %>
-        <%= link_to band.name.upcase, band_songs_path(band) %>
-        <%= link_to '<i class="fi-page-edit"></i>'.html_safe, edit_band_path(band), class: "edit-band-icon" %>
-      </div>
-    </div>
-  <% end %>
-<% else %>
-  <p class="text-center">you're not a member of any bands yet. create one by clicking '+' below!</p>
-<% end %>
+<!-- BANDS -->
+<div class="row band-row">
+  <div class="small-10 small-push-1 columns text-center">
+    <% if user_has_bands? %>
+      <%= render @bands %>
+    <% else %>
+      <p class="text-center">you're not a member of any bands yet. create one by clicking '+' below!</p>
+    <% end %>
+  </div>
+</div>
 
+<!-- ADD BAND -->
 <div class="row text-center">
-  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_band_path, class: "create-new-item" %>
+  <%= link_to icon_add.html_safe, new_band_path, class: "header-icon" %>
 </div>

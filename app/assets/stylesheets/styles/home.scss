@@ -1,0 +1,44 @@
+// APP
+$primary-color: #00ff99;
+$light-grey: #ccc;
+$dark-grey: #262626;
+$box-shadow: 5px 5px 5px #888888;
+// TEXTS
+$text-notice: #ff5050;
+$text-dark: #333;
+
+// ICONS
+$icon-large: 2.5em;
+$icon-small: 1.5em;
+$icon-xsmall: 1.25em;
+
+body {
+  background-color: $dark-grey;
+  color: $text-dark;
+}
+
+label {
+  color: $dark-grey;
+}
+
+.body-wrapper {
+  max-width: 75rem;
+  padding-bottom: 5em;
+  margin: auto;
+  background-color: $light-gray;
+}
+
+.body-content { width: 100%; }
+
+.button,
+.button.alert {
+  color: $text-dark;
+}
+
+#notice {
+  height: 2.5em;
+  width: 100%;
+  padding: .5em;
+  color: $text-notice;
+  text-align: center;
+}

@@ -1,17 +1,13 @@
 <%= simple_form_for @song, url: band_songs_path do |s| %>
   <%= s.error_notification %>
 
-  <div class="form-inputs">
-    <%= s.simple_fields_for :attachments do |a| %>
-      <%= a.attachment_field :file %>
-    <% end %>
-    <%= s.input :name, label: 'name' %>
-    <%= s.input :key, label: 'key' %>
-    <%= s.input :lyrics, label: 'lyrics' %>
-    <%= s.input :note, label: 'notes' %>
-  </div>
+  <%= s.simple_fields_for :attachments do |a| %>
+    <%= a.attachment_field :file %>
+  <% end %>
+  <%= s.input :name, label: 'name' %>
+  <%= s.input :key, label: 'key' %>
+  <%= s.input :lyrics, label: 'lyrics' %>
+  <%= s.input :note, label: 'notes' %>
 
-  <div class="form-actions">
-    <%= s.button :submit, 'create' %>
-  </div>
+  <%= s.button :submit, 'SAVE' %>
 <% end %>

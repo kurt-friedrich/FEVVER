@@ -1,0 +1,13 @@
+#site-title { color: $white; }
+
+#site-title:hover {
+  background-color: $black;
+  color: $primary-color;
+}
+
+.navbar-link a { color: $white; }
+
+.navbar-link a:hover {
+  background-color: $primary-color;
+  color: $text-dark;
+}

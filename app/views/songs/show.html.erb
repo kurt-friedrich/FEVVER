@@ -1,51 +1,41 @@
-<p id="notice"><%= notice %></p>
+<!-- HEADER -->
+<%= render 'header',
+    item: @song,
+    icon_left: icon_back,
+    path_left: band_songs_path,
+    icon_right: icon_edit,
+    path_right: edit_band_song_path
+%>
 
-<div class="row text-center">
-  <div class="small-1 columns">
-    <%= link_to '<i class="fi-arrow-left"></i>'.html_safe, band_songs_path, class: "back-button" %>
-  </div>
-  <div class="small-10 columns end text-center">
-    <h3 class="page-title" id="song-name"><%= @song.name.downcase %></h3>
-  </div>
+<div class="row text-center" id="song-key">
+  key: <%= @song.key %></span>
 </div>
-<p class="text-center">
-  <strong>key of <%= @song.key %></strong>
-  <% if current_user == @band.owner %>
-  // <%= link_to 'Edit', edit_band_song_path(id: @song.id) %>
-  <% end %>
-</p>
-<% unless @song.attachments.count == 0 %>
-  <div class="row text-center" id="audio-playback">
-    <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
-  </div>
-<% end %>
-<div class="row">
-  <div class="small-12 medium-5 medium-push-1 columns text-center">
-    <div id="song-lyrics">
-      <p id="song-lyrics-header">LYRICS</p>
-      <div class="song-content">
-        <%= simple_format(@song.lyrics.downcase) %>
-      </div>
+
+<!-- AUDIO PLAYER-->
+<%= render 'player' %>
+
+<!-- LYRICS + NOTES -->
+<div class="song-content-wrapper row">
+  <div class="song-content-box small-12 medium-6 columns text-center">
+    <p class="song-content-header">LYRICS</p>
+    <div class="song-content-body">
+      <%= simple_format(@song.lyrics.downcase) %>
     </div>
   </div>
-  <div class="small-12 medium-5 medium-push-1 columns end">
-    <div id="song-notes">
-      <p class="text-center" id="song-notes-header">NOTES</p>
-      <div class="song-content">
-        <%= simple_format(@song.note) %>
-      </div>
+  <div class="song-content-box small-12 medium-6 columns end">
+    <p class="song-content-header text-center">NOTES</p>
+    <div class="song-content-body">
+      <%= simple_format(@song.note) %>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="small-12 medium-10 medium-push-1 columns text-center">
-    <%= link_to "comment", new_band_song_comment_path(song_id: @song.id), class: "button", id: "comment-button" %>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 large-6 large-push-3 end columns" id="comments-section">
-    <% @comments.each do |comment| %>
-      <p class="song-comment"><strong>@<%= comment.user.username %>:</strong> <%= comment.body %></p>
-    <% end %>
+
+<!-- COMMENTS -->
+<div class="song-content-wrapper row">
+  <div class="song-content-box small-12 medium-10 medium-push-1 end columns">
+    <div class="song-content-body">
+      <%= render 'comments/form' %>
+      <%= render @comments %>
+    </div>
   </div>
 </div>

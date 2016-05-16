@@ -1,26 +1,17 @@
-<div class="title-bar">
-  <div class="title-bar-left">
-    <div class="title-bar-left-content">
-      <%= link_to 'FEVVER', root_path, class: "title-bar-title"%>
-    </div>
+<div class="row text-center">
+  <div class="small-1 columns">
+    <% if icon_left %>
+      <%= link_to icon_left.html_safe, path_left, class: "header-icon" %>
+    <% end %>
   </div>
-  <div class="title-bar-right">
-    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-      <% if current_user %>
-        <li class="navbar-link">
-          <%= link_to 'settings', user_path(current_user) %>
-        </li>
-        <li class="navbar-link">
-          <%= link_to 'logout', logout_path %>
-        </li>
-      <% else %>
-        <li class="navbar-link">
-          <%= link_to 'signup', signup_path %>
-        </li>
-        <li class="navbar-link">
-          <%= link_to 'log in', login_path %>
-        </li>
-      <% end %>
-    </ul>
+
+  <div class="small-10 columns text-center">
+    <h3 class="header-title"><%= item.name.downcase %></h3>
+  </div>
+
+  <div class="small-1 columns end">
+    <% if user_is_owner? && icon_right %>
+      <%= link_to icon_right.html_safe, path_right, class: "header-icon" %>
+    <% end %>
   </div>
 </div>

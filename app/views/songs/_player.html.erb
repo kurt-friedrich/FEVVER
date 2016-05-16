@@ -1,0 +1,5 @@
+<% if song_has_attachments? %>
+  <div class="row text-center" id="song-player">
+    <%= audio_tag attachment_url(@song.attachments.first, :file), class: "audio-play", controls: true %>
+  </div>
+<% end %>

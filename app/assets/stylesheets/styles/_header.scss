@@ -1,0 +1,12 @@
+.header-title {
+  display: inline-block;
+  box-shadow: $box-shadow;
+  background-color: $primary-color;
+  color: $text-dark;
+  font-weight: bold;
+}
+
+.header-icon {
+  color: $dark-grey;
+  font-size: $icon-large;
+}

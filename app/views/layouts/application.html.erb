@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="en-us">
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
@@ -12,8 +12,13 @@
   </head>
 
   <body>
-    <%= render 'header' %>
-    <p class="text-center" id="notice"><%= notice %></p>
-    <%= yield %>
+    <div class="body-wrapper">
+      <%= render 'navbar' %>
+
+      <div class="body-content">
+        <div class="row" id="notice"><%= notice %></div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
