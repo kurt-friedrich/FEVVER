@@ -6,6 +6,7 @@ $(document).ready(function(){
         mpVisualizer = $('.mp-visualizer', musicPlayer)[0],
         mpPlayhead = $('.mp-visualizer-playhead', musicPlayer)[0],
         mpPlay = $('.mp-controls-play', musicPlayer)[0],
+        mpRegion = $('wavesurfer-region', musicPlayer)[0],
         mpRestart = $('.mp-controls-restart', musicPlayer)[0],
         mpReplay = $('.mp-controls-replay', musicPlayer)[0],
         mpLoop = $('.mp-controls-loop', musicPlayer)[0],
@@ -16,7 +17,6 @@ $(document).ready(function(){
         cursorColor: '#333',
         progressColor: 'purple',
         waveColor: 'red',
-        normalize: true,
         skipLength: 10
     })
 
@@ -27,34 +27,42 @@ $(document).ready(function(){
       timeline.init({
         wavesurfer: waveSurfer,
         container: mpTimeline
-      });
-    })
+      })
 
-    // Playing & Pausing
-    mpPlay.addEventListener('click', function(){
-      if (waveSurfer.isPlaying()) {
-        mpPlay.innerHTML = 'PLAY'
-        waveSurfer.pause()
-      }
-      else {
-        mpPlay.innerHTML = 'PAUSE'
-        waveSurfer.play()
-      }
-    })
+      // Add a couple of pre-defined regions
+      var region = waveSurfer.addRegion({
+        start: 0, // time in seconds
+        end: 20, // time in seconds
+        color: 'rgba(0, 0, 0, 0.4)'
+      })
 
-    // Restarting
-    mpRestart.addEventListener('click', function(){
-      waveSurfer.seekTo(0)
-    })
+      // Playing & Pausing
+      mpPlay.addEventListener('click', function(){
+        if (waveSurfer.isPlaying()) {
+          mpPlay.innerHTML = 'PLAY'
+          waveSurfer.pause()
+        }
+        else {
+          mpPlay.innerHTML = 'PAUSE'
+          waveSurfer.play()
+        }
+      })
 
-    // 10-Second Rewind
-    mpReplay.addEventListener('click', function(){
-      waveSurfer.skipBackward()
-    })
+      // Restarting
+      mpRestart.addEventListener('click', function(){
+        waveSurfer.seekTo(0)
+      })
 
-    // Looping
-    mpLoop.addEventListener('click', function(){
-      //mpAudio.
+      // 10-Second Rewind
+      mpReplay.addEventListener('click', function(){
+        waveSurfer.skipBackward()
+      })
+
+      // Looping
+      mpLoop.addEventListener('click', function(){
+        region.loop = true
+        waveSurfer.seekTo(region.start)
+      })
     })
   })
 })
