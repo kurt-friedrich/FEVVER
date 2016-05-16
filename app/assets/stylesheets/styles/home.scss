@@ -9,10 +9,11 @@ $text-dark: #333;
 
 // ICONS
 $icon-large: 2.5em;
-$icon-small: 1em;
+$icon-small: 1.5em;
+$icon-xsmall: 1.25em;
 
 body {
-  background-color: $light-grey;
+  background-color: $dark-grey;
   color: $text-dark;
 }
 
@@ -31,11 +32,6 @@ label {
 
 .button,
 .button.alert {
-  color: $text-dark;
-}
-
-.form-cancel {
-  margin-left: 1em;
   color: $text-dark;
 }
 

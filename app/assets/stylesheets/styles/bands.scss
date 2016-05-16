@@ -1,34 +1,31 @@
-.band-row {
+// PARTIAL
+.band-index {
+  padding: 1.5em;
   margin-top: 1em;
   margin-bottom: 1em;
+  box-shadow: $box-shadow;
+  background-color: $dark-grey;
 
-  .band-column {
-    height: 100%;
-    padding: 2em;
-    background-color: $dark-grey;
-
-    a{
-      color: $primary-color;
-      font-size: 24px;
-    }
+  a{
+    color: $primary-color;
+    font-size: 24px;
   }
 }
 
+.band-delete-icon { float: left; }
+
+.band-edit-icon { float: right; }
+
+// EDIT
+
 .band-member-delete {
   padding: .25em;
-  font-size: 1.25em;
+  color: $text-notice;
+  font-size: $icon-xsmall;
 }
 
 .band-member-email {
   display: inline-block;
-}
-
-.delete-icon {
-  float: left;
-}
-
-.edit-band-icon {
-  float: right;
 }
 
 #members-edit {

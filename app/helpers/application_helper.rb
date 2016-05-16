@@ -8,6 +8,10 @@ module ApplicationHelper
     @song.attachments.count > 0
   end
 
+  def user_has_bands?
+    @user.bands.count > 0
+  end
+
   def user_is_owner?
     current_user == @band.owner
   end
@@ -22,5 +26,9 @@ module ApplicationHelper
 
   def icon_edit
     '<i class="fi-page-edit"></i>'
+  end
+
+  def icon_trash
+    '<i class="fi-trash"></i>'
   end
 end

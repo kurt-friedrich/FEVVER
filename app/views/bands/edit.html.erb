@@ -3,18 +3,14 @@
     <p class="form-title">EDIT BAND</p>
   </div>
 </div>
-<div class="row" id="new-band-form">
-  <div class="large-4 medium-5 small-12 columns">
-    <%= simple_form_for(@band) do |f| %>
+<div class="row">
+  <div class="small-12 medium-5 large-4 columns">
+    <%= simple_form_for (@band) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :name, label: 'name' %>
-      </div>
+      <%= f.input :name, label: 'name' %>
 
-      <div class="form-actions">
-        <%= f.button :submit, 'update' %>
-      </div>
+      <%= f.button :submit, 'SAVE' %>
     <% end %>
     <%= render 'members' %>
   </div>
