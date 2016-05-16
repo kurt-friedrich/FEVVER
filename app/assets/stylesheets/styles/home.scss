@@ -1,12 +1,13 @@
-// COLOR SCHEME
+// APP
 $primary-color: #00ff99;
 $light-grey: #ccc;
 $dark-grey: #262626;
+$box-shadow: 5px 5px 5px #888888;
 // TEXTS
 $text-notice: #ff5050;
 $text-dark: #333;
 // ICONS
-$icon-large: 3em;
+$icon-large: 2.5em;
 $icon-small: 1em;
 
 body {
@@ -18,7 +19,7 @@ body {
   max-width: 75rem;
   padding-bottom: 5em;
   margin: auto;
-  background-color: $dark-grey;
+  background-color: $light-gray;
 }
 
 .body-content { width: 100%; }

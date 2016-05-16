@@ -1,36 +1,70 @@
 // HEADER
-.section-header, {
-  overflow: hidden;
-  background-color: $primary-color;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-#song-key {
-  color: $primary-color;
-  font-weight: bold;
-}
+#song-key { color: $text-dark; }
 
 // AUDIO PLAYER
 #song-player {
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 // LYRICS + NOTES
-
-
-// COMMENTS
-
-.song-comment {
-  padding: .5em;
-  border-bottom: 1px solid $primary-color;
-  margin: 0;
+.song-content-wrapper {
+  margin-left: .5em;
+  margin-right: .5em;
 }
 
-.song-content {
-  margin-left: 1em;
-  margin-right: 1em;
+#song-comment-wrapper {
+  background-color: $dark-grey;
+}
+
+.song-content-box {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.song-content-header {
+  margin-bottom: .5em;
+  color: $text-dark;
+  font-size: 20px;
+}
+
+.song-content-body {
+  padding: .5em;
+  background-color: $dark-grey;
+  box-shadow: $box-shadow;
+}
+
+// COMMENTS
+#new_comment {
+  margin: .5em;
+}
+
+.comment_body {
+  overflow: hidden;
+  padding-right: .5em;
+}
+
+#comment_body {
+  width: 100%;
+}
+
+#comment-form-submit {
+  float: right;
+  color: $text-dark;
+  font-weight: bold;
+}
+
+.song-comment {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  margin-right: .5em;
+  margin-bottom: 0;
+  margin-left: .5em;
+  border-top: 1px dashed $dark-gray;
+}
+
+.comment-username {
+  color: $primary-color;
 }
 
 .song-row {
@@ -50,29 +84,6 @@
   }
 }
 
-
-
 #band-name { background-color: $primary-color; }
 
-#comment-button {
-  margin-top: 1em;
-  color: $text-dark;
-}
-#comment-form-submit {
-  padding-left: 0;
-
-  input { color: $text-dark; }
-}
-
 #edit-song-cancel { margin-left: 1em; }
-
-#song-comment-form { margin-top: 5em; }
-
-#song-lyrics,
-#song-notes {
-  height: 100%;
-  border: 1px solid $light-grey;
-  border-radius: 10px;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}

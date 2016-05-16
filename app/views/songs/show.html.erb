@@ -7,40 +7,38 @@
     path_right: edit_band_song_path
 %>
 
-<div class="row text-center">
-  key of <span id="song-key"><%= @song.key %></span>
+<div class="row text-center" id="song-key">
+  key: <%= @song.key %></span>
 </div>
 
 <!-- AUDIO PLAYER-->
 <%= render 'player' %>
 
 <!-- LYRICS + NOTES -->
-<div class="row">
-  <div class="small-12 medium-5 medium-push-1 columns text-center" id="song-lyrics">
-    <p id="song-lyrics-header">LYRICS</p>
-    <div class="song-content">
+<div class="song-content-wrapper row">
+  <div class="song-content-box small-12 medium-6 columns text-center">
+    <p class="song-content-header">LYRICS</p>
+    <div class="song-content-body">
       <%= simple_format(@song.lyrics.downcase) %>
     </div>
   </div>
-  <div class="small-12 medium-5 medium-push-1 columns end" id="song-notes-col">
-    <div id="song-notes">
-      <p class="text-center" id="song-notes-header">NOTES</p>
-      <div class="song-content">
-        <%= simple_format(@song.note) %>
-      </div>
+  <div class="song-content-box small-12 medium-6 columns end">
+    <p class="song-content-header text-center">NOTES</p>
+    <div class="song-content-body">
+      <%= simple_format(@song.note) %>
     </div>
   </div>
 </div>
 
 <!-- COMMENTS -->
-<div class="row" id="song-comment-form">
-  <%= render 'comments/form' %>
-</div>
-
-<div class="row">
-  <div class="small-12 medium-10 medium-push-1 end columns" id="comments-section">
-    <% @comments.each do |comment| %>
-      <p class="song-comment"><strong>@<%= comment.user.username %>:</strong> <%= comment.body %></p>
-    <% end %>
+<div class="song-content-wrapper row">
+  <div class="song-content-box small-12 medium-10 medium-push-1 end columns">
+    <div class="song-content-body">
+      <%= render 'comments/form' %>
+      <% @comments.each do |comment| %>
+        <p class="song-comment"><span class="comment-username"><%= comment.user.username %></span>:</strong> <%= comment.body %></p>
+      <% end %>
+    </div>
   </div>
+
 </div>
