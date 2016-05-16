@@ -1,11 +1,11 @@
-<div class="title-bar">
+<div class="title-bar row text-center">
   <div class="title-bar-left">
-    <div class="title-bar-left-content">
-      <%= link_to 'FEVVER', root_path, class: "title-bar-title"%>
-    </div>
+    <ul class="menu">
+      <li class="navbar-link"><%= link_to 'FEVVER', root_path, id: "site-title"%></li>
+    </ul>
   </div>
   <div class="title-bar-right">
-    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+    <ul class="menu">
       <% if current_user %>
         <li class="navbar-link">
           <%= link_to 'settings', user_path(current_user) %>

@@ -21,9 +21,7 @@ body {
   background-color: $dark-grey;
 }
 
-.body-content {
-  width: 100%;
-}
+.body-content { width: 100%; }
 
 #notice {
   height: 2.5em;
@@ -31,21 +29,4 @@ body {
   padding: .5em;
   color: $text-notice;
   text-align: center;
-}
-
-.form-title {
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-.create-new-item {
-  font-size: 3em;
-}
-
-.submit-button input {
-  color: $text-dark;
-}
-
-.submit-button input:hover {
-  color: $text-dark;
 }
