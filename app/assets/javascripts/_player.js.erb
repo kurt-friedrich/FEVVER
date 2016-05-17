@@ -9,6 +9,8 @@ $(document).ready(function(){
         mpRegion = $('wavesurfer-region', musicPlayer)[0],
         mpRestart = $('.mp-controls-restart', musicPlayer)[0],
         mpReplay = $('.mp-controls-replay', musicPlayer)[0],
+        mpFast = $('.mp-controls-fast', musicPlayer)[0],
+        mpSlow = $('.mp-controls-slow', musicPlayer)[0],
         mpLoop = $('.mp-controls-loop', musicPlayer)[0],
         mpTimeline = $('#mp-timeline', musicPlayer)[0]
 
@@ -48,8 +50,6 @@ $(document).ready(function(){
           loop: !region.loop,
           color: !region.loop ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
         })
-
-        // waveSurfer.seekTo(waveSurfer.start)
       })
     })
 
@@ -73,6 +73,16 @@ $(document).ready(function(){
     // 10-Second Rewind
     mpReplay.addEventListener('click', function(){
       waveSurfer.skipBackward()
+    })
+
+    // Half Speed
+    mpSlow.addEventListener('click', function(){
+      waveSurfer.setPlaybackRate(.5)
+    })
+
+    // Double Speed
+    mpFast.addEventListener('click', function(){
+      waveSurfer.setPlaybackRate(2)
     })
   })
 })
