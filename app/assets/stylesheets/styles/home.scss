@@ -9,6 +9,7 @@ $text-dark: #333;
 
 // ICONS
 $icon-large: 2.5em;
+$icon-medium: 2em;
 $icon-small: 1.5em;
 $icon-xsmall: 1.25em;
 
@@ -25,7 +26,7 @@ label {
   max-width: 75rem;
   padding-bottom: 5em;
   margin: auto;
-  background-color: $light-gray;
+  background-color: $dark-gray;
 }
 
 .body-content { width: 100%; }

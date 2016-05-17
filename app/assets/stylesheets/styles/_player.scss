@@ -15,26 +15,27 @@
   margin: .5em;
 }
 
-.mp-controls ul {
-  margin: 0;
-  margin-top: 1em;
-  padding: 0;
-}
+// .mp-controls ul {
+//   margin: 0;
+//   margin-top: 1em;
+//   padding: 0;
+// }
+//
+// .mp-controls li {
+//   margin: 0;
+//   width: 24%;
+//   display: inline-block;
+//   text-align: center;
+// }
 
-.mp-controls li {
-  margin: 0;
-  width: 24%;
-  display: inline-block;
-  text-align: center;
-}
-
-.mp-controls li a {
-  font-size: $icon-small;
+.mp-controls a {
+  font-size: $icon-medium;
 }
 
 .mp-controls .button {
+  width: 100%;
   padding: .5em 2em .5em 2em;
-  box-shadow: $box-shadow;
+  background-color: $dark-gray;
 }
 
 .mp-controls .button:visited {

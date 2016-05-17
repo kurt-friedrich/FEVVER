@@ -1,24 +1,43 @@
-<div class="mp small-12 columns">
+<div class="mp row">
   <%= audio_tag attachment_url(@song.attachments.first, :file), class: "mp-audio" %>
 
-  <div id="mp-waveform"></div>
-  <div id="mp-timeline"></div>
-  <section class="mp-controls">
-    <ul>
-      <li><a class="mp-controls-play button" href="#play">
+  <div class="small-12 columns">
+    <div id="mp-waveform"></div>
+    <div id="mp-timeline"></div>
+  </div>
+
+  <div class="mp-controls">
+    <div class="small-4 medium-2 large-2 columns text-center">
+      <a class="mp-controls-play button" href="#play">
         <i class="fi-play"></i>
-      </a></li>
-      <li><a class="mp-controls-restart button" href="#restart">
+      </a>
+    </div>
+    <div class="small-4 medium-2 large-2 columns text-center">
+      <a class="mp-controls-restart button" href="#restart">
         <i class="fi-previous"></i>
-      </a></li>
-      <li><a class="mp-controls-replay button" href="#replay">
+      </a>
+    </div>
+    <div class="small-4 medium-2 large-2 columns text-center">
+      <a class="mp-controls-replay button" href="#replay">
         <i class="fi-rewind-ten"></i>
-      </a></li>
-      <li><a class="mp-controls-loop button" href="#loop">
+      </a>
+    </div>
+    <div class="small-4 medium-2 large-2 columns text-center">
+      <a class="mp-controls-loop button" href="#loop">
         <i class="fi-loop"></i>
-      </a></li>
-    </ul>
-  </section>
+      </a>
+    </div>
+    <div class="small-4 medium-2 large-2 columns text-center">
+      <a class="mp-controls-loop button" href="#loop">
+        <i class="fi-loop"></i>
+      </a>
+    </div>
+    <div class="small-4 medium-2 large-2 columns text-center">
+      <a class="mp-controls-loop button" href="#loop">
+        <i class="fi-loop"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
 <!-- <% if song_has_attachments? %>
