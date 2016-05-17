@@ -1,17 +1,18 @@
-.mp-visualizer {
-  width: 100%;
-  border: 1px solid red;
-  /*height: 60px;*/
-  background-color: yellow;
+// .mp-visualizer {
+//   width: 100%;
+//   margin: auto;
+//   border: 1px solid red;
+//   height: 60px;*/
+//   background-color: yellow;
+// }
+
+.mp {
+  margin-top: 1em;
 }
 
-.mp-visualizer-playhead {
-  display: none;
-  position: relative;
-  left: 0%;
-  width: 20px;
-  height: 60px;
-  background-color: orange;
+#mp-waveform,
+#mp-timeline {
+  margin: .5em;
 }
 
 .mp-controls {

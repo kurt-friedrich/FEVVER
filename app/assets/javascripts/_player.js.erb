@@ -3,26 +3,29 @@ $(document).ready(function(){
 
   $(musicPlayers).each(function(i,musicPlayer){
     var mpAudio = $('.mp-audio', musicPlayer)[0],
-        mpVisualizer = $('.mp-visualizer', musicPlayer)[0],
+        mpWaveform = $('#mp-waveform', musicPlayer)[0],
         mpPlayhead = $('.mp-visualizer-playhead', musicPlayer)[0],
         mpPlay = $('.mp-controls-play', musicPlayer)[0],
         mpRegion = $('wavesurfer-region', musicPlayer)[0],
         mpRestart = $('.mp-controls-restart', musicPlayer)[0],
         mpReplay = $('.mp-controls-replay', musicPlayer)[0],
         mpLoop = $('.mp-controls-loop', musicPlayer)[0],
-        mpTimeline = $('.mp-timeline', musicPlayer)[0]
+        mpTimeline = $('#mp-timeline', musicPlayer)[0]
 
     var waveSurfer = WaveSurfer.create({
-        container: mpVisualizer,
+        container: mpWaveform,
         cursorColor: '#333',
-        progressColor: 'purple',
-        waveColor: 'red',
-        skipLength: 10
+        progressColor: '#00ff99',
+        waveColor: '#666',
+        barWidth: 3,
+        skipLength: 10,
+        height: 100,
+        autoCenter: true
     })
 
     waveSurfer.load(mpAudio.src)
 
-    waveSurfer.on('ready', function () {
+    waveSurfer.on('ready', function (){
       var timeline = Object.create(WaveSurfer.Timeline);
       timeline.init({
         wavesurfer: waveSurfer,
@@ -35,34 +38,34 @@ $(document).ready(function(){
         end: 20, // time in seconds
         color: 'rgba(0, 0, 0, 0.4)'
       })
+    })
 
-      // Playing & Pausing
-      mpPlay.addEventListener('click', function(){
-        if (waveSurfer.isPlaying()) {
-          mpPlay.innerHTML = 'PLAY'
-          waveSurfer.pause()
-        }
-        else {
-          mpPlay.innerHTML = 'PAUSE'
-          waveSurfer.play()
-        }
-      })
+    // Playing & Pausing
+    mpPlay.addEventListener('click', function(){
+      if (waveSurfer.isPlaying()) {
+        mpPlay.innerHTML = 'PLAY'
+        waveSurfer.pause()
+      }
+      else {
+        mpPlay.innerHTML = 'PAUSE'
+        waveSurfer.play()
+      }
+    })
 
-      // Restarting
-      mpRestart.addEventListener('click', function(){
-        waveSurfer.seekTo(0)
-      })
+    // Restarting
+    mpRestart.addEventListener('click', function(){
+      waveSurfer.seekTo(0)
+    })
 
-      // 10-Second Rewind
-      mpReplay.addEventListener('click', function(){
-        waveSurfer.skipBackward()
-      })
+    // 10-Second Rewind
+    mpReplay.addEventListener('click', function(){
+      waveSurfer.skipBackward()
+    })
 
-      // Looping
-      mpLoop.addEventListener('click', function(){
-        region.loop = true
-        waveSurfer.seekTo(region.start)
-      })
+    // Looping
+    mpLoop.addEventListener('click', function(){
+      region.loop = true
+      waveSurfer.seekTo(region.start)
     })
   })
 })

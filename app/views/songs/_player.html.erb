@@ -1,13 +1,8 @@
-<div id="player1" class="mp">
-  <!-- <audio class="mp-audio" src="<%= attachment_url(@song.attachments.first, :file) %>"</audio> -->
+<div class="mp small-12 columns">
   <%= audio_tag attachment_url(@song.attachments.first, :file), class: "mp-audio" %>
-  <!-- <audio class="mp-audio" src="085affc6d878ecf7971332816c24f48818ef3908d6fa1be5610c68de482c.mp3"></audio> -->
-  <section class="mp-visualizer">
-    <div class="mp-region"></div>
-    <div class="mp-visualizer-playhead"></div>
-  </section>
-  <section class="mp-timeline">
-  </section>
+
+  <div id="mp-waveform"></div>
+  <div id="mp-timeline"></div>
   <section class="mp-controls">
     <ul>
       <li><a class="mp-controls-play" href="#play">PLAY</a></li>
