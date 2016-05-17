@@ -34,6 +34,7 @@ gem 'refile', require: ['refile/rails']
 gem 'refile-mini_magick'
 gem 'refile-s3'
 gem 'simple_form'
+gem 'wavesurfer-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

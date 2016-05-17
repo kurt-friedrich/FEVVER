@@ -12,7 +12,9 @@
 </div>
 
 <!-- AUDIO PLAYER-->
-<%= render 'player' %>
+<% if song_has_attachments? %>
+  <%= render 'player' %>
+<% end %>
 
 <!-- LYRICS + NOTES -->
 <div class="song-content-wrapper row">

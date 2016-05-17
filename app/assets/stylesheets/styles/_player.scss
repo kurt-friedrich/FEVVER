@@ -1,0 +1,44 @@
+// .mp-visualizer {
+//   width: 100%;
+//   margin: auto;
+//   border: 1px solid red;
+//   height: 60px;*/
+//   background-color: yellow;
+// }
+
+.mp {
+  margin-top: 1em;
+}
+
+#mp-waveform,
+#mp-timeline {
+  margin: .5em;
+}
+
+// .mp-controls ul {
+//   margin: 0;
+//   margin-top: 1em;
+//   padding: 0;
+// }
+//
+// .mp-controls li {
+//   margin: 0;
+//   width: 24%;
+//   display: inline-block;
+//   text-align: center;
+// }
+
+.mp-controls a {
+  font-size: $icon-medium;
+  text-align: center;
+}
+
+.mp-controls .button {
+  width: 100%;
+  padding: .5em 2em .5em 2em;
+  background-color: $dark-gray;
+}
+
+.mp-controls .button:visited {
+  color: #333 !important;
+}

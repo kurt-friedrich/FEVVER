@@ -1,14 +1,16 @@
 // APP
 $primary-color: #00ff99;
+$primary-light: #66ffc2;
 $light-grey: #ccc;
 $dark-grey: #262626;
-$box-shadow: 5px 5px 5px #888888;
+$box-shadow: 5px 5px 5px #595959;
 // TEXTS
 $text-notice: #ff5050;
 $text-dark: #333;
 
 // ICONS
 $icon-large: 2.5em;
+$icon-medium: 2em;
 $icon-small: 1.5em;
 $icon-xsmall: 1.25em;
 
@@ -25,7 +27,7 @@ label {
   max-width: 75rem;
   padding-bottom: 5em;
   margin: auto;
-  background-color: $light-gray;
+  background-color: $dark-gray;
 }
 
 .body-content { width: 100%; }
