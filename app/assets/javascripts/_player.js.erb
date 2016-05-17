@@ -15,8 +15,8 @@ $(document).ready(function(){
     var waveSurfer = WaveSurfer.create({
         container: mpWaveform,
         cursorColor: '#333',
-        progressColor: '#00ff99',
-        waveColor: '#666',
+        progressColor: '#66ffc2',
+        waveColor: '#595959',
         barWidth: 3,
         skipLength: 10,
         height: 100,
@@ -36,7 +36,20 @@ $(document).ready(function(){
       var region = waveSurfer.addRegion({
         start: 0, // time in seconds
         end: 20, // time in seconds
-        color: 'rgba(0, 0, 0, 0.4)'
+        color: 'rgba(0, 0, 0, 0.4)',
+      })
+
+      var loopStatus = region.loop
+
+      // Looping
+      mpLoop.addEventListener('click', function(){
+
+        region.update({
+          loop: !region.loop,
+          color: !region.loop ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
+        })
+
+        // waveSurfer.seekTo(waveSurfer.start)
       })
     })
 
@@ -60,12 +73,6 @@ $(document).ready(function(){
     // 10-Second Rewind
     mpReplay.addEventListener('click', function(){
       waveSurfer.skipBackward()
-    })
-
-    // Looping
-    mpLoop.addEventListener('click', function(){
-      region.loop = true
-      waveSurfer.seekTo(region.start)
     })
   })
 })
