@@ -43,11 +43,11 @@ $(document).ready(function(){
     // Playing & Pausing
     mpPlay.addEventListener('click', function(){
       if (waveSurfer.isPlaying()) {
-        mpPlay.innerHTML = 'PLAY'
+        mpPlay.innerHTML = '<i class="fi-play"></i>'
         waveSurfer.pause()
       }
       else {
-        mpPlay.innerHTML = 'PAUSE'
+        mpPlay.innerHTML = '<i class="fi-pause"></i>'
         waveSurfer.play()
       }
     })
