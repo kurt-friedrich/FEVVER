@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = build_user(user_params)
+    @user = User.new(user_params)
     @user.save
     @token = params[:invite_token]
 
