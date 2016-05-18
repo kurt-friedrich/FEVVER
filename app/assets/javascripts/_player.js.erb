@@ -38,7 +38,7 @@ $(document).ready(function(){
       var region = waveSurfer.addRegion({
         start: 0, // time in seconds
         end: 20, // time in seconds
-        color: 'rgba(0, 0, 0, 0.4)',
+        color: 'rgba(38, 38, 38, 0.4)',
       })
 
       var loopStatus = region.loop
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
         region.update({
           loop: !region.loop,
-          color: !region.loop ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
+          color: !region.loop ? 'rgba(255, 255, 255, 0.4)' : 'rgba(38, 38, 38, 0.4)',
         })
       })
     })
@@ -75,14 +75,24 @@ $(document).ready(function(){
       waveSurfer.skipBackward()
     })
 
-    // Half Speed
+    // Slow Speed
     mpSlow.addEventListener('click', function(){
-      waveSurfer.setPlaybackRate(.5)
+      if (waveSurfer.backend.playbackRate == .5) {
+        waveSurfer.setPlaybackRate(1)
+      }
+      else {
+        waveSurfer.setPlaybackRate(.5)
+      }
     })
 
-    // Double Speed
+    // Fast Speed
     mpFast.addEventListener('click', function(){
-      waveSurfer.setPlaybackRate(2)
+      if (waveSurfer.backend.playbackRate == 2) {
+        waveSurfer.setPlaybackRate(1)
+      }
+      else {
+        waveSurfer.setPlaybackRate(2)
+      }
     })
   })
 })
