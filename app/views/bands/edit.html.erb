@@ -23,7 +23,7 @@
     <br>
     <div>
       <%= link_to 'cancel', bands_path %>
-      <%= link_to 'DELETE', band_path(@band), method: :delete, class: "button alert band-delete-icon" %>
+      <%= link_to 'DELETE', band_path(@band), method: :delete, class: "button alert band-delete-icon", data: {confirm: "WARNING: Are you ABSOLUTELY SURE you want to delete this band? All songs, notes, and members will be permanently lost."} %>
     </div>
   </div>
 </div>
