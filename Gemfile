@@ -33,6 +33,7 @@ gem 'foundation-icons-sass-rails'
 gem 'refile', require: ['refile/rails']
 gem 'refile-mini_magick'
 gem 'refile-s3'
+gem 'sendgrid'
 gem 'simple_form'
 gem 'wavesurfer-rails'
 
