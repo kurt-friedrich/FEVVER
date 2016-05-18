@@ -4,6 +4,10 @@ module ApplicationHelper
     @band.songs.count > 0
   end
 
+  def only_member?
+    @band.users.count == 1
+  end
+
   def song_has_attachments?
     @song.attachments.count > 0
   end
