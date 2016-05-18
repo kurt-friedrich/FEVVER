@@ -4,7 +4,7 @@ class BandsController < ApplicationController
 
   def index
     if current_user
-      @bands = @user.bands
+      @bands = @user.bands.order('name ASC')
     else
       render 'application/welcome'
     end
@@ -25,7 +25,7 @@ class BandsController < ApplicationController
       if @band.save
         @band.users << @user
         format.html { redirect_to bands_path, notice: 'Band was successfully created.' }
-        format.json { render :show, rastatus: :created, location: @band }
+        format.json { render :show, status: :created, location: @band }
       else
         format.html { render :new }
         format.json { render json: @band.errors, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class BandsController < ApplicationController
   def update
     respond_to do |format|
       if @band.update(band_params)
-        format.html { redirect_to @band, notice: 'Band was successfully updated.' }
+        format.html { redirect_to bands_path, notice: 'Band was successfully updated.' }
         format.json { render :show, status: :ok, location: @band }
       else
         format.html { render :edit }

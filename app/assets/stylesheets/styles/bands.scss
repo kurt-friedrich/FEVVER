@@ -12,22 +12,35 @@
   }
 }
 
-.band-delete-icon { float: left; }
+.band-delete-icon {
+  float: right;
+}
 
 .band-edit-icon { float: right; }
 
 // EDIT
+.band-member {
+  margin-bottom: .5em;
+}
+
 .band-member-delete {
-  padding: .25em;
-  color: $text-notice;
   font-size: $icon-xsmall;
+  padding-right: .25em;
+}
+
+.band-member-delete:hover {
+  color: $text-notice;
 }
 
 .band-member-email {
+  position: relative;
+  bottom: .2em;
   display: inline-block;
+  margin-bottom: 0;
 }
 
 #members-edit {
   margin-top: 2em;
+  margin-bottom: .5em;
   font-size: 14px;
 }

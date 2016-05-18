@@ -1,7 +1,6 @@
 <div class="band-index">
-  <% if current_user == band.owner %>
-    <%= link_to icon_trash.html_safe, band_path(band), method: :delete, class: "band-delete-icon" %>
-  <% end %>
   <%= link_to band.name.upcase, band_songs_path(band) %>
-  <%= link_to icon_edit.html_safe, edit_band_path(band), class: "band-edit-icon" %>
+  <% if current_user == band.owner %>
+    <%= link_to icon_edit.html_safe, edit_band_path(band), class: "band-edit-icon" %>
+  <% end %>
 </div>
