@@ -39,6 +39,6 @@
   background-color: $dark-gray;
 }
 
-.mp-controls .button:visited {
-  color: #333 !important;
+.mp-controls .button:hover {
+  color: $primary-color;
 }

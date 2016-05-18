@@ -12,7 +12,7 @@
   </div>
 
   <div class="small-1 columns end">
-    <% if defined?(icon_right) && user_is_owner %>
+    <% if defined?(icon_right) && user_is_owner? %>
       <%= link_to icon_right.html_safe, path_right, class: "header-icon" %>
     <% end %>
   </div>

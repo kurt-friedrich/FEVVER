@@ -13,7 +13,13 @@ class User < ActiveRecord::Base
     too_short: "password must be between 8 and 25 characters",
     maximum: 25,
     too_long: "password must be between 8 and 25 characters"
-  }
+  }, on: :create
+  validates :password, length: {
+    minimum: 8,
+    too_short: "password must be between 8 and 25 characters",
+    maximum: 25,
+    too_long: "password must be between 8 and 25 characters"
+  }, on: :update, allow_nil: true
   # validate :email_is_valid_format
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

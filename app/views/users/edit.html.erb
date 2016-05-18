@@ -1,26 +1,28 @@
 <div class="row">
   <div class="small-12 columns">
-    <p class="form-title">EDIT USER</p>
-  </div>
-</div>
-<div class="row" id="new-band-form">
-  <div class="large-4 medium-5 small-12 columns">
-    <%= simple_form_for(@user) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email %>
-        <%= f.input :username %>
-      </div>
-
-      <div class="form-actions submit-button">
-        <%= f.button :submit, 'submit' %>
-      </div>
-    <% end %>
+    <p class="form-title">USER SETTINGS</p>
   </div>
 </div>
 <div class="row">
-  <div class="small-12 columns">
-    <%= link_to 'cancel', user_path %>
+  <div class="small-12 medium-5 large-4 columns">
+    <div>
+      <!-- EDIT USER INFO -->
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :email %>
+        <%= f.input :username %>
+        <%= f.button :submit, 'SAVE' %>
+      <% end %>
+    </div>
+    <div>
+      <!-- EDIT USER BANDS -->
+      <%= render 'bands' %>
+      <%= link_to 'NEW BAND', new_band_path, class:"button" %>
+    </div>
+    <br>
+    <div>
+      <%= link_to 'cancel', root_path %>
+      <%= link_to 'DELETE', user_path(@user), method: :delete, class: "button alert user-delete-icon", data: {confirm: "WARNING: Are you ABSOLUTELY SURE you want to delete your account? All bands you own and their related material will be permanently lost."} %>
+    </div>
   </div>
 </div>
