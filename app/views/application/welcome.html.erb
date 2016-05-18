@@ -1,3 +1,29 @@
-<p>
-  hi ur not logged in pls do that or sign up lol
-</p>
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="inner cover">
+        <h1 class="cover-heading">SHIPPER</h1>
+        <p class="lead">Shipper is a place to ship all the pointless shit you have to say to the entire world because idk how could that possibly go wrong</p>
+        <p class="lead">
+          <%= button_to "Sign Up", new_user_path, class: "btn btn-lg btn-info", method: "get" %>
+        </p>
+        OR
+        <p class="lead">
+          <%= button_to "Login", login_path, class: "btn btn-lg btn-info", method: "get" %>
+        </p>
+      </div>
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p>Created by Team Tagship</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

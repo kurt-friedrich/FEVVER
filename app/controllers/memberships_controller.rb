@@ -20,10 +20,10 @@ class MembershipsController < ApplicationController
   end
 
   def destroy
-    @membership = Membership.find_by user: @user, band: @band
+    @membership = Membership.find(params[:id])
     @membership.destroy
     respond_to do |format|
-      format.html { redirect_to band_song_path }
+      format.html { redirect_to edit_band_path(@band) }
       format.json { head :no_content }
     end
   end

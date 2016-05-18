@@ -32,6 +32,10 @@ module ApplicationHelper
     '<i class="fi-page-edit"></i>'
   end
 
+  def icon_torso
+    '<i class="fi-torso"></i>'
+  end
+
   def icon_trash
     '<i class="fi-trash"></i>'
   end

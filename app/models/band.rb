@@ -6,4 +6,8 @@ class Band < ActiveRecord::Base
   has_many :users, through: :memberships
   has_many :songs
 
+  def membership_for(user)
+    memberships.find_by(user: user)
+  end
+
 end
