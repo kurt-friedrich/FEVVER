@@ -13,10 +13,11 @@
 
   <body>
     <div class="body-wrapper">
-      <%= render 'navbar' %>
-
-      <div class="body-content">
+      <% unless welcome_page %>
+        <%= render 'navbar' %>
         <div class="row" id="notice"><%= notice %></div>
+      <% end %>
+      <div class="body-content">
 
         <%= yield %>
 

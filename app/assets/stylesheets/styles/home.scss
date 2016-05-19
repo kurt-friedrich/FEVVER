@@ -29,12 +29,15 @@ a {
 
 .body-wrapper {
   max-width: 75rem;
-  padding-bottom: 5em;
+  min-height: 100%;
   margin: auto;
+  padding-bottom: 5em;
   background-color: $dark-gray;
 }
 
-.body-content { width: 100%; }
+.body-content {
+  width: 100%;
+}
 
 .button,
 .button.alert {
