@@ -21,13 +21,13 @@
   <div class="song-content-box small-12 medium-6 columns text-center">
     <p class="song-content-header">LYRICS</p>
     <div class="song-content-body">
-      <%= simple_format(@song.lyrics.downcase) %>
+      <%= simple_format(@song.lyrics.downcase) if @song.lyrics %>
     </div>
   </div>
   <div class="song-content-box small-12 medium-6 columns end">
     <p class="song-content-header text-center">NOTES</p>
     <div class="song-content-body">
-      <%= simple_format(@song.note) %>
+      <%= simple_format(@song.note) if @song.note %>
     </div>
   </div>
 </div>
