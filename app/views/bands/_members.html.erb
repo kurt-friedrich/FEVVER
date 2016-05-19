@@ -2,7 +2,7 @@
 <% @band.users.each do |user| %>
   <div class="band-member">
     <% unless only_member? %>
-      <%= link_to '<i class="fi-x"></i>'.html_safe, band_membership_path(@band, @band.membership_for(user)), method: :delete, class: "band-member-delete" %>
+      <%= link_to '<i class="fi-x"></i>'.html_safe, band_membership_path(@band, @band.membership_for(user)), method: :delete, class: "band-member-delete", data: {confirm: "Are you SURE you want to remove this member? They will lose access to all band songs, notes, and communications."} %>
     <% end %>
     <p class="band-member-email"><%= user.email %></p>
   </div>
