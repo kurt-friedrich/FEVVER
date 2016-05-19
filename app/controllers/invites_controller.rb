@@ -19,7 +19,7 @@ class InvitesController < ApplicationController
       else
         InviteMailer.new_user_invite(@invite, signup_path(invite_token: @invite.token)).deliver
       end
-      redirect_to edit_band_path(id: @band.id)
+      redirect_to edit_band_path(id: @band.id), notice: "invite was successfully sent"
     else
       render :new
     end
