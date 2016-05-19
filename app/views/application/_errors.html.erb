@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+  <% object.errors.full_messages.each do |msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="callout alert" data-closable>
+        <%= content_tag :div, msg %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

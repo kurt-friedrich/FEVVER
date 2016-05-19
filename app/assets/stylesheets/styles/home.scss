@@ -37,11 +37,20 @@ a {
 
 .body-content {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 2em;
 }
 
 .button,
 .button.alert {
+  color: $text-dark;
+}
+
+.error .error {
+  display: block;
+  position: relative;
+  bottom: 1rem;
+  padding-left: .5rem;
+  background-color: $alert-color;
   color: $text-dark;
 }
 
