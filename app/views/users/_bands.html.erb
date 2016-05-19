@@ -2,9 +2,9 @@
 <% @user.bands.each do |band| %>
   <div class="user-band">
     <% if band.owner == current_user %>
-      <%= link_to '<i class="fi-torso"></i>'.html_safe, new_band_path, class: "user-band-owner" %>
+      <%= link_to '<i class="fi-torso"></i>'.html_safe, edit_band_path, class: "user-band-owner" %>
     <% else %>
-      <%= link_to '<i class="fi-x"></i>'.html_safe, band_membership_path(band, band.membership_for(@user)), class: "user-band-remove", data: {confirm: "Are you SURE you want to leave this band? You will lose access to all songs, notes, and communications."} %>
+      <%= link_to '<i class="fi-x"></i>'.html_safe, band_membership_path(band, band.membership_for(@user)), method: :delete, class: "user-band-remove", data: {confirm: "Are you SURE you want to leave this band? You will lose access to all band songs, notes, and communications."} %>
     <% end %>
     <p class="user-band-name"><%= band.name %></p>
   </div>

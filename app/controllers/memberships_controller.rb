@@ -22,9 +22,11 @@ class MembershipsController < ApplicationController
   def destroy
     @membership = Membership.find(params[:id])
     @membership.destroy
-    respond_to do |format|
-      format.html { redirect_to edit_band_path(@band) }
-      format.json { head :no_content }
+
+    if current_user == @band.owner
+      redirect_to edit_band_path(@band)
+    else
+      redirect_to edit_user_path(current_user)
     end
   end
 
