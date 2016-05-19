@@ -18,20 +18,17 @@ class UsersController < ApplicationController
     @user.save
     @token = params[:invite_token]
 
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id
-        if @token != nil
-          org = Invite.find_by_token(@token).band #find the user group attached to the invite
-          @user.bands.push(org) #add this user to the new user group as a member
-        else
-          format.html { redirect_to root_path, notice: 'User was successfully created.' }
-          format.json { render :show, status: :created, location: @user }
-        end
+    if @user.save
+      session[:user_id] = @user.id
+      if @token != nil
+        org = Invite.find_by_token(@token).band #find the user group attached to the invite
+        @user.bands.push(org) #add this user to the new user group as a member
+        redirect_to root_path
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        redirect_to root_path, notice: 'User was successfully created.'
       end
+    else
+      render :new
     end
   end
 

@@ -17,7 +17,7 @@ class InvitesController < ApplicationController
         #Add the user to the user group
         @invite.recipient.bands.push(@invite.band)
       else
-        InviteMailer.new_user_invite(@invite, signup_path(:invite_token => @invite.token)).deliver
+        InviteMailer.new_user_invite(@invite, signup_path(invite_token: @invite.token)).deliver
       end
       redirect_to edit_band_path(id: @band.id)
     else
