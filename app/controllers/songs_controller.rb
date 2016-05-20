@@ -9,10 +9,6 @@ class SongsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @song.comments
-    respond_to do |format|
-      format.html {}
-      format.js {}
-    end
   end
 
   def new
@@ -23,14 +19,11 @@ class SongsController < ApplicationController
   def create
     @song = @band.songs.new(song_params)
 
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to band_songs_path, notice: 'Song was successfully created.' }
-        format.json { render :show, status: :created, location: @song }
-      else
-        format.html { render :new }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    if @song.save
+      flash[:success] = 'song was successfully created'
+      redirect_to band_songs_path
+    else
+      render :new
     end
   end
 
@@ -38,23 +31,18 @@ class SongsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @song.update(song_params)
-        format.html { redirect_to band_song_path, notice: 'song updated.' }
-        format.json { render :show, status: :ok, location: @song }
-      else
-        format.html { render :edit }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    if @song.update(song_params)
+      flash[:success] = 'song was successfully updated'
+      redirect_to edit_band_song_path
+    else
+      render :edit
     end
   end
 
   def destroy
     @song.destroy
-    respond_to do |format|
-      format.html { redirect_to band_songs_path, notice: 'song destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:alert] = 'song was successfully destroyed'
+    redirect_to band_songs_path
   end
 
   private

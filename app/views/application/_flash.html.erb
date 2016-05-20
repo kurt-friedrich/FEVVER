@@ -1,10 +1,8 @@
 <% flash.each do |name, msg| %>
-  <% if msg.is_a?(String) %>
-    <div class="callout <%= name.to_s == 'notice' ? 'success' : 'alert' %>" data-closable>
-      <%= content_tag :div, msg, class: 'text-center' %>
-      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <% end %>
+  <div class="callout <%= name %>" data-closable>
+    <%= content_tag :div, msg, class: 'text-center' %>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>

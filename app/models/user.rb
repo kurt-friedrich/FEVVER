@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   before_validation :downcase_email
   validates :email, :username, presence: true
-  # validates :email, uniqueness: true
+  validates :email, uniqueness: true
   validates :password, length: {
     minimum: 8,
     too_short: "password must be between 8 and 25 characters",
@@ -23,6 +23,20 @@ class User < ActiveRecord::Base
   # validate :email_is_valid_format
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
+  def order_bands
+    owner = []
+    member = []
+    bands.each do |band|
+      if self == band.owner
+        owner << band
+      else
+        member << band
+      end
+    end
+    ordered_bands = owner + member
+    ordered_bands
+  end
 
   private
 

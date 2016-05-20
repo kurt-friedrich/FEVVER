@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-  before_action :set_band, only: [:show, :edit, :update, :destroy]
+  before_action :set_band, only: [:edit, :update, :destroy]
   before_action :set_user
 
   def index
@@ -10,9 +10,6 @@ class BandsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def new
     @band = Band.new
   end
@@ -21,15 +18,12 @@ class BandsController < ApplicationController
     @band = Band.new(band_params)
     @band.owner = @user
 
-    respond_to do |format|
-      if @band.save
-        @band.users << @user
-        format.html { redirect_to bands_path, notice: 'Band was successfully created.' }
-        format.json { render :show, status: :created, location: @band }
-      else
-        format.html { render :new }
-        format.json { render json: @band.errors, status: :unprocessable_entity }
-      end
+    if @band.save
+      @band.users << @user
+      flash[:success] = 'band was successfully created'
+      redirect_to bands_path
+    else
+      render :new
     end
   end
 
@@ -37,22 +31,18 @@ class BandsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @band.update(band_params)
-        format.html { redirect_to bands_path, notice: 'Band was successfully updated.' }
-        format.json { render :show, status: :ok, location: @band }
-      else
-        format.html { render :edit }
-      end
+    if @band.update(band_params)
+      flash[:success] = 'band was successfully updated'
+      redirect_to edit_band_path
+    else
+      render :edit
     end
   end
 
   def destroy
     @band.destroy
-    respond_to do |format|
-      format.html { redirect_to bands_url, notice: 'Band was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:alert] = 'band was successfully deleted'
+    redirect_to bands_url
   end
 
   private
