@@ -21,3 +21,15 @@
 .mp-controls .button:hover {
   color: $primary-color;
 }
+
+.mp-controls-play:focus,
+.mp-controls-restart:focus,
+.mp-controls-replay:focus {
+  color: $text-dark;
+}
+
+// .mp-controls-loop:focus,
+// .mp-controls-slow:focus,
+// .mp-controls-fast:focus {
+//   color: $primary-color;
+// }
