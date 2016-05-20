@@ -16,4 +16,18 @@ class Band < ActiveRecord::Base
   def downcase_name
     name.downcase!
   end
+
+  def order_users
+    band_owner = []
+    band_members = []
+    users.each do |user|
+      if user == owner
+        band_owner << user
+      else
+        band_members << user
+      end
+    end
+    ordered = band_owner + band_members
+    ordered
+  end
 end

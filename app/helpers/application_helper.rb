@@ -17,7 +17,11 @@ module ApplicationHelper
   end
 
   def user_has_bands?
-    @user.bands.count > 0
+    current_user.bands.count > 0
+  end
+
+  def is_owner?(user)
+    user == @band.owner
   end
 
   def user_is_owner?

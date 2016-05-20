@@ -1,4 +1,5 @@
 class BandsController < ApplicationController
+  before_action :require_user
   before_action :set_band, only: [:edit, :update, :destroy]
 
   def index
@@ -27,6 +28,7 @@ class BandsController < ApplicationController
   end
 
   def edit
+    @users = @band.order_users
   end
 
   def update

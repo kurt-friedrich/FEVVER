@@ -12,10 +12,11 @@ class InvitesController < ApplicationController
       if @invite.recipient != nil #send a notification email
         InviteMailer.existing_user_invite(@invite).deliver #add user to band
         @invite.recipient.bands.push(@invite.band)
+        flash[:success] = 'user was successfully added'
       else #send invitiation email
         InviteMailer.new_user_invite(@invite, signup_path(invite_token: @invite.token)).deliver
+        flash[:success] = 'invite was successfully sent'
       end
-      flash[:success] = 'invite was successfully sent'
       redirect_to edit_band_path(@band)
     else
       render :new
