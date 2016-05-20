@@ -28,6 +28,8 @@ $(document).ready(function(){
     waveSurfer.load(mpAudio.src)
 
     waveSurfer.on('ready', function (){
+      $('#waveform-loading').hide()
+
       var timeline = Object.create(WaveSurfer.Timeline);
       timeline.init({
         wavesurfer: waveSurfer,

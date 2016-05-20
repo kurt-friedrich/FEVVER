@@ -7,6 +7,13 @@
   margin: .5em;
 }
 
+#waveform-loading {
+  position: relative;
+  width: 100%;
+  top: 40px;
+  text-align: center;
+}
+
 .mp-controls a {
   font-size: $icon-medium;
   text-align: center;
