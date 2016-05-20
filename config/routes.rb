@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/logout' => "sessions#destroy", as: :logout
 
   resources :users, except: [:index]
-  resources :bands do
+  resources :bands, except: [:show] do
     resources :invites
     resources :memberships, only: [:new, :create, :destroy]
     resources :songs do
