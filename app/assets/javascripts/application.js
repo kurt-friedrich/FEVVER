@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require refile
 //= require wavesurfer
 //= require wavesurfer-plugins
 //= require_tree .
