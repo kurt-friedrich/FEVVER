@@ -13,9 +13,7 @@
   margin-right: .5em;
 }
 
-#song-comment-wrapper {
-  background-color: $dark-grey;
-}
+#song-comment-wrapper { background-color: $dark-grey; }
 
 .song-content-box {
   margin-top: 1em;
@@ -36,24 +34,16 @@
 }
 
 // COMMENT FORM
-#new_comment {
-  padding: .5em;
-}
+#new_comment { padding: .5em; }
 
 .comment_body {
   overflow: hidden;
   padding-right: .5em;
 }
 
-#comment_body {
-  width: 100%;
-}
+#comment_body { width: 100%; }
 
-#comment-form-submit {
-  float: right;
-  color: $text-dark;
-  font-weight: bold;
-}
+#comment-form-submit { float: right; }
 
 // COMMENTS
 .song-comment {
@@ -65,9 +55,7 @@
   border-top: 1px dashed $dark-gray;
 }
 
-.comment-username {
-  color: $primary-color;
-}
+.comment-username { color: $primary-color; }
 
 // PARTIAL
 .song-index {

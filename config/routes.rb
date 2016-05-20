@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :memberships, only: [:new, :create, :destroy]
     resources :songs do
       resources :attachments, only: [:new, :create]
-      resources :comments, only: [:new, :create]
+      resources :comments, only: [:create]
     end
   end
 end

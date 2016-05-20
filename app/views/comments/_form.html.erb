@@ -1,6 +1,4 @@
-<%= simple_form_for @comment, url: band_song_comments_path(song_id: @song.id) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.button :submit, 'post', id: "comment-form-submit" %>
+<%= simple_form_for @comment, url: band_song_comments_path(@band, @song) do |f| %>
+  <%= f.button :submit, 'POST', id: "comment-form-submit" %>
   <%= f.input :body, label: false, placeholder: 'leave a comment' %>
 <% end %>
