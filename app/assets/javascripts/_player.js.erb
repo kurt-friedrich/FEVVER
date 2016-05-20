@@ -50,6 +50,8 @@ $(document).ready(function(){
           loop: !region.loop,
           color: !region.loop ? 'rgba(255, 255, 255, 0.4)' : 'rgba(38, 38, 38, 0.4)',
         })
+
+        mpLoop.style.color = !region.loop ? '#262626' : '#00ff99'
       })
     })
 
@@ -79,9 +81,11 @@ $(document).ready(function(){
     mpSlow.addEventListener('click', function(){
       if (waveSurfer.backend.playbackRate == .5) {
         waveSurfer.setPlaybackRate(1)
+        mpSlow.style.color = '#262626'
       }
       else {
         waveSurfer.setPlaybackRate(.5)
+        mpSlow.style.color = '#00ff99'
       }
     })
 
@@ -89,9 +93,11 @@ $(document).ready(function(){
     mpFast.addEventListener('click', function(){
       if (waveSurfer.backend.playbackRate == 2) {
         waveSurfer.setPlaybackRate(1)
+        mpFast.style.color = '#262626'
       }
       else {
         waveSurfer.setPlaybackRate(2)
+        mpFast.style.color = '#00ff99'
       }
     })
   })

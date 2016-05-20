@@ -16,7 +16,7 @@ class InvitesController < ApplicationController
         @invite.recipient.bands.push(@invite.band)
         flash[:success] = 'user was successfully added'
       else #send invitiation email
-        InviteMailer.new_user_invite(@invite, signup_path(invite_token: @invite.token)).deliver
+        InviteMailer.new_user_invite(@invite, signup_url(invite_token: @invite.token)).deliver
         flash[:success] = 'invite was successfully sent'
       end
       redirect_to edit_band_path(@band)
