@@ -1,5 +1,5 @@
 <p id="edit-bands">bands</p>
-<% @user.bands.each do |band| %>
+<% @bands.each do |band| %>
   <div class="user-band">
     <% if band.owner == current_user %>
       <%= link_to '<i class="fi-torso"></i>'.html_safe, edit_band_path, class: "user-band-owner" %>

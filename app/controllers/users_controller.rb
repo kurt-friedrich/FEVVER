@@ -33,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @bands = @user.order_bands
   end
 
   def update

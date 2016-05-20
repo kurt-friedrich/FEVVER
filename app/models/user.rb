@@ -24,6 +24,20 @@ class User < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
+  def order_bands
+    owner = []
+    member = []
+    bands.each do |band|
+      if self == band.owner
+        owner << band
+      else
+        member << band
+      end
+    end
+    ordered_bands = owner + member
+    ordered_bands
+  end
+
   private
 
   def downcase_email

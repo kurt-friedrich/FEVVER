@@ -3,5 +3,5 @@ class Song < ActiveRecord::Base
   has_many :attachments, dependent: :destroy
   has_many :comments, as: :commentable
   accepts_nested_attributes_for :attachments
-  validates :name, :lyrics, :key, presence: true
+  validates :name, presence: true
 end
