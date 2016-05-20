@@ -4,11 +4,10 @@ class CommentsController < ApplicationController
   before_action :set_song
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = @song.comments.new(comment_params)
     @comment.user = current_user
 
     if @comment.save
-      @song.comments << @comment
       redirect_to band_song_path(@band, @song)
     else
       redirect_to band_song_path(@band, @song)

@@ -2,8 +2,7 @@ class InvitesController < ApplicationController
   before_action :set_band
 
   def new
-    @invite = Invite.new
-    @invite.band = @band
+    @invite = @band.invites.new
   end
 
   def create
