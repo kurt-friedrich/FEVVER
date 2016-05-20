@@ -1,6 +1,8 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :set_band
+  before_action :verify_membership
+  before_action :verify_ownership, only: [:destroy]
 
   def index
     @songs = @band.songs.order("created_at DESC")

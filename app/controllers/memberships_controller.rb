@@ -1,6 +1,7 @@
 class MembershipsController < ApplicationController
   before_action :require_user
   before_action :set_band
+  before_action :verify_membership
 
   def destroy
     @membership = Membership.find(params[:id])

@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :require_user
   before_action :set_band
   before_action :set_song
+  before_action :verify_membership
 
   def create
     @comment = @song.comments.new(comment_params)

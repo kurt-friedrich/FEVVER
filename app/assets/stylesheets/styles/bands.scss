@@ -1,14 +1,28 @@
 // PARTIAL
 .band-index {
-  padding: 1.5em;
+  display: table;
+  width: 100%;
+  height: 5em;
   margin-top: 1em;
   margin-bottom: 1em;
   box-shadow: $box-shadow;
   background-color: $dark-grey;
 
   a{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
     color: $primary-color;
     font-size: 24px;
+  }
+}
+
+.band-index:hover {
+  background-color: $primary-color;
+
+  a {
+    color: $dark-grey;
   }
 }
 

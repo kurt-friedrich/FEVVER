@@ -7,10 +7,9 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :show]
   resources :bands, except: [:show] do
-    resources :invites
-    resources :memberships, only: [:new, :create, :destroy]
+    resources :invites, only: [:new, :create]
+    resources :memberships, only: [:destroy]
     resources :songs do
-      resources :attachments, only: [:new, :create]
       resources :comments, only: [:create]
     end
   end

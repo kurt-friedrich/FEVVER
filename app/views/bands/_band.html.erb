@@ -1,6 +1,3 @@
-<div class="band-index">
-  <%= link_to band.name.upcase, band_songs_path(band) %>
-  <% if current_user == band.owner %>
-    <%= link_to icon_edit.html_safe, edit_band_path(band), class: "band-edit-icon" %>
-  <% end %>
+<div class="band-index text-center">
+  <%= link_to band.name.upcase, band_songs_path(band), class: "band-index-name" %>
 </div>

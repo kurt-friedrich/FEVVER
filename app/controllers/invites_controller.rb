@@ -1,5 +1,7 @@
 class InvitesController < ApplicationController
   before_action :set_band
+  before_action :verify_membership
+  before_action :verify_ownership
 
   def new
     @invite = @band.invites.new
