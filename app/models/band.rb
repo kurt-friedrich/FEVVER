@@ -9,12 +9,12 @@ class Band < ActiveRecord::Base
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  def membership_for(user)
-    memberships.find_by(user: user)
+  def has_songs?
+    songs.count > 0
   end
 
-  def downcase_name
-    name.downcase!
+  def membership_for(user)
+    memberships.find_by(user: user)
   end
 
   def order_users
@@ -29,5 +29,11 @@ class Band < ActiveRecord::Base
     end
     ordered = band_owner + band_members
     ordered
+  end
+
+  private
+
+  def downcase_name
+    name.downcase!
   end
 end

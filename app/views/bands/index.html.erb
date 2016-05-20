@@ -6,7 +6,7 @@
 <!-- BANDS -->
 <div class="row band-row">
   <div class="small-10 small-push-1 columns text-center">
-    <% if user_has_bands? %>
+    <% if current_user.has_bands? %>
       <%= render @bands %>
     <% else %>
       <p class="text-center">you're not a member of any bands yet. create one by clicking '+' below!</p>

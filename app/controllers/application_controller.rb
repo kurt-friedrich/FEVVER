@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
 
   def verify_ownership
-    unless current_user == @band.owner
+    unless current_user.is_owner?(@band)
       flash[:alert] = "access denied - you are not the band owner"
       redirect_to :root
     end

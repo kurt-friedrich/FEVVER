@@ -1,7 +1,7 @@
 <p id="members-edit">members</p>
 <% @users.each do |user| %>
   <div class="band-member">
-    <% if is_owner?(user) %>
+    <% if user.is_owner?(@band) %>
       <i class="fi-torso user-band-owner"></i>
     <% else %>
       <%= link_to '<i class="fi-x"></i>'.html_safe, band_membership_path(@band, @band.membership_for(user)), method: :delete, class: "band-member-delete", data: {confirm: "Are you SURE you want to delete this member? They will lose access to all band songs, notes, and communications."} %>

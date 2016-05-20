@@ -7,7 +7,7 @@ class MembershipsController < ApplicationController
     @membership = Membership.find(params[:id])
     @membership.destroy
 
-    if current_user == @band.owner
+    if current_user.is_owner?(@band)
       flash[:alert] = 'successfully deleted member'
       redirect_to edit_band_path(@band)
     else

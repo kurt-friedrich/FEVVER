@@ -24,11 +24,19 @@ class User < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
+  def has_bands?
+    bands.count > 0
+  end
+
+  def is_owner?(band)
+    self == band.owner
+  end
+
   def order_bands
     owner = []
     member = []
     bands.each do |band|
-      if self == band.owner
+      if is_owner?(band)
         owner << band
       else
         member << band
