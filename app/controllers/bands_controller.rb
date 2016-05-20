@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-  before_action :require_user
+  before_action :require_user, except: [:index]
   before_action :set_band, only: [:edit, :update, :destroy]
   before_action :verify_membership, only: [:edit, :update, :destroy]
   before_action :verify_ownership, only: [:edit, :update, :destroy]
