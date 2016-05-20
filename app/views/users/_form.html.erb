@@ -2,9 +2,9 @@
     <% if @token != nil %>
       <%= hidden_field_tag :invite_token, @token %>
     <% end %>
-    <%= f.input :email %>
-    <%= f.input :username %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
-    <%= f.button :submit, 'submit' %>
+    <%= f.input :email, label: 'email', required: false %>
+    <%= f.input :username, label: 'username', required: false %>
+    <%= f.input :password, label: 'password', required: false %>
+    <%= f.input :password_confirmation, label: 'confirm password', required: false %>
+    <%= f.button :submit, 'SUBMIT' %>
 <% end %>
