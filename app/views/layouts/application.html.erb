@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <title>FEVVER</title>
 
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -13,10 +14,11 @@
 
   <body>
     <div class="body-wrapper">
-      <%= render 'navbar' %>
-
+      <% unless welcome_page %>
+        <%= render 'navbar' %>
+        <%= render 'flash' %>
+      <% end %>
       <div class="body-content">
-        <div class="row" id="notice"><%= notice %></div>
 
         <%= yield %>
 

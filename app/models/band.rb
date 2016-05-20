@@ -5,6 +5,7 @@ class Band < ActiveRecord::Base
   has_many :memberships, dependent: :destroy
   has_many :users, through: :memberships
   has_many :songs
+  validates :name, presence: true
 
   def membership_for(user)
     memberships.find_by(user: user)

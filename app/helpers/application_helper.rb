@@ -4,6 +4,10 @@ module ApplicationHelper
     @band.songs.count > 0
   end
 
+  def welcome_page
+    controller_name == 'bands' && action_name == 'index' && !current_user
+  end
+
   def only_member?
     @band.users.count == 1
   end

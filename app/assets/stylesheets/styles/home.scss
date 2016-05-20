@@ -29,22 +29,41 @@ a {
 
 .body-wrapper {
   max-width: 75rem;
-  padding-bottom: 5em;
+  min-height: 100%;
   margin: auto;
+  padding-bottom: 5em;
   background-color: $dark-gray;
 }
 
-.body-content { width: 100%; }
+.body-content {
+  width: 100%;
+  margin-top: 2em;
+}
 
 .button,
 .button.alert {
   color: $text-dark;
 }
 
-#notice {
-  height: 2.5em;
-  width: 100%;
-  padding: .5em;
-  color: $text-notice;
-  text-align: center;
+.error .error {
+  display: block;
+  position: relative;
+  bottom: 1rem;
+  padding-left: .5rem;
+  background-color: $alert-color;
+  color: $text-dark;
 }
+
+.vv {
+  color: $primary-color;
+  font-weight: bold;
+}
+
+
+// #notice {
+//   height: 2.5em;
+//   width: 100%;
+//   padding: .5em;
+//   color: $text-notice;
+//   text-align: center;
+// }

@@ -2,13 +2,6 @@ class CommentsController < ApplicationController
   before_action :require_user
   before_action :set_song
 
-  def index
-  end
-
-  def new
-    @comment = Comment.new
-  end
-
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user

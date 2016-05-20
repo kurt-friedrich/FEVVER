@@ -1,13 +1,10 @@
-<%= simple_form_for @song, url: band_songs_path do |s| %>
-  <%= s.error_notification %>
-
-  <%= s.simple_fields_for :attachments do |a| %>
+<%= simple_form_for @song, url: band_songs_path do |f| %>
+  <%= f.simple_fields_for :attachments do |a| %>
     <%= a.attachment_field :file %>
   <% end %>
-  <%= s.input :name, label: 'name' %>
-  <%= s.input :key, label: 'key' %>
-  <%= s.input :lyrics, label: 'lyrics' %>
-  <%= s.input :note, label: 'notes' %>
-
-  <%= s.button :submit, 'SAVE' %>
+  <%= f.input :name, label: 'name', class: 'error' %>
+  <%= f.input :key, label: 'key' %>
+  <%= f.input :lyrics, label: 'lyrics' %>
+  <%= f.input :note, label: 'notes' %>
+  <%= f.button :submit, 'SAVE' %>
 <% end %>
