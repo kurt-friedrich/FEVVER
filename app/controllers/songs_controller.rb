@@ -5,7 +5,7 @@ class SongsController < ApplicationController
   before_action :verify_ownership, only: [:destroy]
 
   def index
-    @songs = @band.songs.order("created_at DESC")
+    @songs = @band.songs.order("name ASC")
   end
 
   def show
