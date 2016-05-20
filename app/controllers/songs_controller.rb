@@ -35,7 +35,7 @@ class SongsController < ApplicationController
   def update
     if @song.update(song_params)
       flash[:success] = 'song was successfully updated'
-      redirect_to edit_band_song_path
+      redirect_to band_song_path
     else
       render :edit
     end
