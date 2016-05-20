@@ -85,6 +85,11 @@ $(document).ready(function(){
         waveSurfer.setPlaybackRate(1)
         mpSlow.style.color = '#262626'
       }
+      else if (waveSurfer.backend.playbackRate == 2) {
+        waveSurfer.setPlaybackRate(.5)
+        mpSlow.style.color = '#00ff99'
+        mpFast.style.color = '#262626'
+      }
       else {
         waveSurfer.setPlaybackRate(.5)
         mpSlow.style.color = '#00ff99'
@@ -96,6 +101,11 @@ $(document).ready(function(){
       if (waveSurfer.backend.playbackRate == 2) {
         waveSurfer.setPlaybackRate(1)
         mpFast.style.color = '#262626'
+      }
+      else if (waveSurfer.backend.playbackRate == .5) {
+        waveSurfer.setPlaybackRate(2)
+        mpSlow.style.color = '#262626'
+        mpFast.style.color = '#00ff99'
       }
       else {
         waveSurfer.setPlaybackRate(2)

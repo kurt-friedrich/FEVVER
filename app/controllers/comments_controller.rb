@@ -8,10 +8,13 @@ class CommentsController < ApplicationController
     @comment = @song.comments.new(comment_params)
     @comment.user = current_user
 
-    if @comment.save
-      redirect_to band_song_path(@band, @song)
-    else
-      redirect_to band_song_path(@band, @song)
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to band_song_path(@band, @song) }
+        format.js {}
+      else
+        format.html { redirect_to band_song_path(@band, @song) }
+      end
     end
   end
 
