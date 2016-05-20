@@ -3,7 +3,6 @@
       <p class="form-title">USER SETTINGS</p>
       <!-- EDIT USER INFO -->
       <%= simple_form_for(@user) do |f| %>
-        <%= f.error_notification %>
         <%= f.input :email, label: 'email', required: false %>
         <%= f.input :username, label: 'username', required: false %>
         <%= f.button :submit, 'UPDATE' %>

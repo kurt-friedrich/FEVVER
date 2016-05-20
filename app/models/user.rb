@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :bands, :through => :memberships
   has_many :memberships
-  has_many :invitations, class_name: 'User', foreign_key: 'recipient_id'
-  has_many :sent_invites, class_name: 'User', foreign_key: 'sender_id'
+  has_many :invitations, class_name: 'Invite', foreign_key: 'recipient_id'
+  has_many :sent_invites, class_name: 'Invite', foreign_key: 'sender_id'
 
   before_validation :downcase_email
   validates :email, :username, presence: true
