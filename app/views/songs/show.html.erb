@@ -35,9 +35,9 @@
 <!-- COMMENTS -->
 <div class="song-content-wrapper row">
   <div class="song-content-box small-12 medium-10 medium-push-1 end columns">
-    <div class="song-content-body">
+    <div class="song-content-body" id="song-comments">
       <%= render 'comments/form' %>
-      <%= render @comments %>
+      <div id="comments-list"><%= render @comments %></div>
     </div>
   </div>
 </div>
