@@ -9,7 +9,7 @@ class InviteMailer < ApplicationMailer
 
   def existing_user_invite(invite)
     @invite = invite
-    @url = "https://salty-tundra-17115.herokuapp.com/login"
+    @url = login_url
     mail(to: @invite.email, subject: 'You were added to a band on FEVVER')
   end
 end

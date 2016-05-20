@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :bands, :through => :memberships
   has_many :memberships
-  has_many :invitations, class_name: 'User', foreign_key: 'recipient_id'
-  has_many :sent_invites, class_name: 'User', foreign_key: 'sender_id'
+  has_many :invitations, class_name: 'Invite', foreign_key: 'recipient_id'
+  has_many :sent_invites, class_name: 'Invite', foreign_key: 'sender_id'
 
   before_validation :downcase_email
   validates :email, :username, presence: true
@@ -20,15 +20,23 @@ class User < ActiveRecord::Base
     maximum: 25,
     too_long: "password must be between 8 and 25 characters"
   }, on: :update, allow_nil: true
-  # validate :email_is_valid_format
+  validate :email_is_valid_format
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
+  def has_bands?
+    bands.count > 0
+  end
+
+  def is_owner?(band)
+    self == band.owner
+  end
 
   def order_bands
     owner = []
     member = []
     bands.each do |band|
-      if self == band.owner
+      if is_owner?(band)
         owner << band
       else
         member << band

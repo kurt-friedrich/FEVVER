@@ -1,10 +1,12 @@
 class BandsController < ApplicationController
+  before_action :require_user
   before_action :set_band, only: [:edit, :update, :destroy]
-  before_action :set_user
+  before_action :verify_membership, only: [:edit, :update, :destroy]
+  before_action :verify_ownership, only: [:edit, :update, :destroy]
 
   def index
     if current_user
-      @bands = @user.bands.order('name ASC')
+      @bands = current_user.bands.order('name ASC')
     else
       render 'application/welcome'
     end
@@ -16,10 +18,10 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-    @band.owner = @user
+    @band.owner = current_user
 
     if @band.save
-      @band.users << @user
+      @band.users << current_user
       flash[:success] = 'band was successfully created'
       redirect_to bands_path
     else
@@ -28,6 +30,7 @@ class BandsController < ApplicationController
   end
 
   def edit
+    @users = @band.order_users
   end
 
   def update
@@ -49,10 +52,6 @@ class BandsController < ApplicationController
 
   def set_band
     @band = Band.find(params[:id])
-  end
-
-  def set_user
-    @user = current_user
   end
 
   def band_params

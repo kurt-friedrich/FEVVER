@@ -1,6 +1,6 @@
 <%= simple_form_for @song, url: band_songs_path do |f| %>
   <%= f.simple_fields_for :attachments do |a| %>
-    <%= a.attachment_field :file %>
+    <%= a.attachment_field :file, direct: true %>
   <% end %>
   <%= f.input :name, label: 'name', class: 'error' %>
   <%= f.input :key, label: 'key' %>

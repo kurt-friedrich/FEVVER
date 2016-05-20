@@ -7,14 +7,10 @@
   margin-bottom: .5em;
 }
 
-.user-band-remove,
 .user-band-owner {
   font-size: $icon-xsmall;
   padding-right: .25em;
-}
-
-.user-band-remove:hover {
-  color: $text-notice;
+  color: $dark-grey;
 }
 
 .user-band-name {

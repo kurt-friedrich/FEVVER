@@ -10,7 +10,7 @@
 <!-- SONGS -->
 <div class="row">
   <div class="small-10 small-push-1 columns end text-center">
-    <% if band_has_songs? %>
+    <% if @band.has_songs? %>
       <%= render @songs %>
     <% else %>
       <p class="text-center">there are no songs for this band. add one by clicking '+' below!</p>
