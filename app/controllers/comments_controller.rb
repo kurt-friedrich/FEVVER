@@ -1,20 +1,17 @@
 class CommentsController < ApplicationController
   before_action :require_user
+  before_action :set_band
   before_action :set_song
 
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
 
-    respond_to do |format|
-      if @comment.save
-        @song.comments << @comment
-        format.html { redirect_to band_song_path(id: @song.id) }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.save
+      @song.comments << @comment
+      redirect_to band_song_path(@band, @song)
+    else
+      redirect_to band_song_path(@band, @song)
     end
   end
 
@@ -27,6 +24,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_band
+    @band = Band.find(params[:band_id])
+  end
 
   def set_song
     @song = Song.find(params[:song_id])
