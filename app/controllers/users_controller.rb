@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
-  def show
-    respond_to do |format|
-      format.html {}
-      format.js {}
-    end
-  end
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -25,7 +18,8 @@ class UsersController < ApplicationController
         @user.bands.push(org) #add this user to the new user group as a member
         redirect_to root_path
       else
-        redirect_to root_path, notice: 'User was successfully created.'
+        flash[:success] = 'welcome to FEVVER'
+        redirect_to root_path
       end
     else
       render :new
@@ -37,23 +31,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @user.update!(user_params)
-        format.html { redirect_to edit_user_path, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update!(user_params)
+      flash[:success] = 'account info successfully updated'
+      redirect_to edit_user_path
+    else
+      render :edit
     end
   end
 
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to :root
   end
 
   private

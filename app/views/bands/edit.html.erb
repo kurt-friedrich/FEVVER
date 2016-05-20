@@ -3,8 +3,7 @@
       <p class="form-title">EDIT BAND</p>
       <!-- EDIT NAME -->
       <%= simple_form_for (@band) do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :name, label: 'name' %>
+        <%= f.input :name, label: 'name', required: false %>
         <%= f.button :submit, 'UPDATE' %>
       <% end %>
       <!-- EDIT MEMBERS -->
@@ -13,6 +12,6 @@
       <br><br>
       <%= link_to 'DELETE BAND', band_path(@band), method: :delete, class: "button alert", data: {confirm: "WARNING: Are you ABSOLUTELY SURE you want to delete this band? All songs, notes, and members will be permanently lost."} %>
       <br><br>
-      <%= link_to 'cancel', bands_path %>
+      <%= link_to 'back', bands_path %>
   </div>
 </div>

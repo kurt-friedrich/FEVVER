@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login' => "sessions#create", as: :login_create
   get '/logout' => "sessions#destroy", as: :logout
 
-  resources :users, except: [:index]
+  resources :users, except: [:index, :show]
   resources :bands, except: [:show] do
     resources :invites
     resources :memberships, only: [:new, :create, :destroy]

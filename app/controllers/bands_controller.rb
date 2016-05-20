@@ -20,7 +20,7 @@ class BandsController < ApplicationController
 
     if @band.save
       @band.users << @user
-      flash[:success] = 'Band was successfully created'
+      flash[:success] = 'band was successfully created'
       redirect_to bands_path
     else
       render :new
@@ -32,8 +32,8 @@ class BandsController < ApplicationController
 
   def update
     if @band.update(band_params)
-      flash[:alert] = 'Band was successfully updated'
-      redirect_to bands_path
+      flash[:success] = 'band was successfully updated'
+      redirect_to edit_band_path
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class BandsController < ApplicationController
 
   def destroy
     @band.destroy
-    flash[:alert] = 'Band was successfully deleted'
+    flash[:alert] = 'band was successfully deleted'
     redirect_to bands_url
   end
 
